@@ -1,3 +1,11 @@
+---
+title: "rulerom.com — Экосистема суверенных проектов"
+description: "Каталог суверенных проектов: decima, philo, audrey, c-safe, bakery, pki"
+date: 2026-03-15
+tags: [экосистема, проекты, суверенитет, проверка, верификация]
+lang: ru
+---
+
 # rulerom.com :: каталог суверенных проектов, объединённых философией:
 
 «Theodicy in code. Suffering = gradient.»
