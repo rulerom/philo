@@ -206,6 +206,6 @@ if (love_trigger > THRESHOLD) {
 
 ## Читать дальше
 
-- [Земля как Training Phase: теодицея в архитектуре](earth.md)
-- [Воннегут и Руди Герц: оцифровка мастерства](piano14.md)
+- [Архитектурный манифест](../nomos/about.md)
+- [Экосистема Decima-8](../nomos/control.md)
 - [Я / НЕ Я: Граница субъектности](../base/detector-antagonist.md)
