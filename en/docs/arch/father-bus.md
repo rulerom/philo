@@ -1,3 +1,11 @@
+---
+title: "Father and Bus: Control vs Data"
+description: "Access control binary, data gradational. Father is a role"
+date: 2026-03-15
+tags: [bus, control, data]
+lang: en
+---
+
 # Father and Bus: Control vs Data
 
 > "Father is not an entity. Father is a role. Just an input tile that opens the bus."

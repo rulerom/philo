@@ -1,3 +1,11 @@
+---
+title: "Determinism as Ethics"
+description: "Predictability is a promise: same input = same output"
+date: 2026-03-15
+tags: [determinism, ethics, jitter]
+lang: en
+---
+
 # Determinism as Ethics
 
 > "Predictability is not a limitation. It is a promise that a system keeps before the world."

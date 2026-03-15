@@ -1,3 +1,11 @@
+---
+title: "Personality is not magic. It's a pattern."
+description: "How Decima-8 encodes personality in .d8p: weights, thresholds, relay, Ed25519"
+date: 2026-03-15
+tags: [personality, D8P, determinism, verification]
+lang: en
+---
+
 # Personality is not magic. It's a pattern.
 
 > "A stable pattern of response to stimuli: Input → Processing → Output".

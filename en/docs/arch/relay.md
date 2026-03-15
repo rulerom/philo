@@ -1,3 +1,11 @@
+---
+title: "Relay Instead of Router"
+description: "Locality scales: 8 neighbors, linear complexity, 0 jitter"
+date: 2026-03-15
+tags: [relay, routing, scalability]
+lang: en
+---
+
 # Relay Instead of Router
 
 > "Locality scales. Global connectivity creates chaos."

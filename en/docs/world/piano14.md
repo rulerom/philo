@@ -1,3 +1,11 @@
+---
+title: "Vonnegut and Rudy Gertz: Digitizing Mastery"
+description: "Amplify human through machine, not replace"
+date: 2026-03-15
+tags: [Vonnegut, mastery, digitization]
+lang: en
+---
+
 # Vonnegut and Rudy Gertz: Digitizing Mastery
 
 > "We are not replacing the master. We give the master a voice that speaks at 20 microseconds."

@@ -1,3 +1,11 @@
+---
+title: "Architectural Manifesto: Why We Are Open"
+description: "Hybrid model: emulator open, IDE controlled"
+date: 2026-03-15
+tags: [openness, control, hybrid]
+lang: en
+---
+
 # Architectural Manifesto: Why We Are Open (and Why Not)
 
 > "Openness is not a dogma. Openness is a tool.

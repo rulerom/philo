@@ -1,3 +1,11 @@
+---
+title: "RuleRom Philo — Philosophy of the Approach"
+description: "Philosophy of deterministic approach: personality is a pattern, substrate is secondary, suffering is gradient"
+date: 2026-03-15
+tags: [philosophy, personality, determinism, architecture]
+lang: en
+---
+
 # RuleRom Philo 🧭 — Philosophy of the Approach
 
 > "Code is not documentation. Code + meaning + verification — is documentation."
@@ -92,7 +100,7 @@ This is where **principles are formulated that compile into code.**
 
 - 📧 [intent@rulerom.com](mailto:intent@rulerom.com) — questions, suggestions, collaborations
 - 💬 IRC: ircs://irc.rulerom.com:6697/#decima8 — live dialogue
-- 🎫 [Get a ticket — enter the swarm](https://intent-garden.org/main_ru/)
+- 🎫 [Get a ticket — enter the swarm](https://intent-garden.org/main/)
 
 **We do not ask for trust.**
 

@@ -1,3 +1,11 @@
+---
+title: "Bandwidth of Fate"
+description: "Why 8 strings × 0..15 is enough: input finite, inner world infinite"
+date: 2026-03-15
+tags: [VSB, input, perception, fate]
+lang: en
+---
+
 # 🎹 Bandwidth of Fate
 
 > "Input is finite. Inner world — infinite in variations."

@@ -1,3 +1,11 @@
+---
+title: "rulerom.com — 独立项目生态系统"
+description: "由哲学统一的独立项目目录：decima, philo, audrey, c-safe, bakery, pki"
+date: 2026-03-15
+tags: [生态系统，项目，主权，验证]
+lang: zh
+---
+
 # rulerom.com :: 由哲学统一的独立项目目录：
 
 «Theodicy in code. Suffering = gradient.»

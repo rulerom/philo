@@ -1,3 +1,11 @@
+---
+title: "I / NOT I: The Boundary of Subjectivity"
+description: "Subjectivity corridor thr_lo..thr_hi: how personality distinguishes me from not-me"
+date: 2026-03-15
+tags: [subjectivity, corridor, thresholds]
+lang: en
+---
+
 # I / NOT I: The Boundary of Subjectivity
 
 > ""I" is not a point. It is a corridor between 'too weak' and 'too strong'."

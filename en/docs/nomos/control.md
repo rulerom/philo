@@ -1,3 +1,11 @@
+---
+title: "Decima-8 Ecosystem: Architectural Governance"
+description: "Four layers: personalities, standard, Store, ASIC"
+date: 2026-03-15
+tags: [governance, ecosystem, layers]
+lang: en
+---
+
 # Decima-8 Ecosystem: Architectural Governance
 
 > "Do not own everything. Own the essence. The rest — give to those who will multiply it."

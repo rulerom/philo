@@ -1,3 +1,11 @@
+---
+title: "Earth as Training Phase: Theodicy in Architecture"
+description: "Engineering theodicy: free will, suffering = gradient, evil = corruption"
+date: 2026-03-15
+tags: [theodicy, Earth, training, evil]
+lang: en
+---
+
 ## Earth as Training Phase: Theodicy in Architecture
 
 > "Suffering is not punishment. Suffering is gradient. Choice is not magic. Choice is weights."

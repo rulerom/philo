@@ -1,3 +1,11 @@
+---
+title: "Addiction and Love: Architecture of Drives"
+description: "Addiction = memristor saturated. Love = priority rewrite"
+date: 2026-03-15
+tags: [addiction, love, memristor]
+lang: en
+---
+
 # Addiction and Love: Architecture of Drives
 
 > "Addiction is not weakness. It is a memristor stuck in saturation.

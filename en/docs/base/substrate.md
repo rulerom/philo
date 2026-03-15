@@ -1,3 +1,11 @@
+---
+title: "Substrate is Secondary, Intention is Primary"
+description: "Why .d8p works everywhere: x86, ARM, FPGA, ASIC"
+date: 2026-03-15
+tags: [substrate, portability, D8P]
+lang: en
+---
+
 # Substrate is Secondary, Intention is Primary
 
 > "Personality is not where. Personality is what. Pattern is not tied to silicon."
