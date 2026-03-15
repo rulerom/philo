@@ -26,4 +26,4 @@ Each project is independent. All projects are verifiable. The entire ecosystem i
 
 ---
 
-## Founded by [🌿 Intent Garden Org](https://intent-garden.org/en/)
+## Founded by [🌿 Intent Garden Org](https://intent-garden.org/main/)

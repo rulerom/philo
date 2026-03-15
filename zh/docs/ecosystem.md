@@ -26,4 +26,4 @@
 
 ---
 
-## Founded by [🌿 Intent Garden Org](https://intent-garden.org/zh/)
+## Founded by [🌿 Intent Garden Org](https://intent-garden.org/main_zh/)

@@ -100,4 +100,4 @@ This is where **principles are formulated that compile into code.**
 
 ---
 
-> **Bake the future. Build the substrate. [🌿 Intent Garden Org](https://intent-garden.org/main_ru/) 🛠️⚡️**
+> **Bake the future. Build the substrate. [🌿 Intent Garden Org](https://intent-garden.org/main/) 🛠️⚡️**

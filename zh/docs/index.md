@@ -100,4 +100,4 @@
 
 ---
 
-> **烘焙未来。构建基质。[🌿 Intent Garden Org](https://intent-garden.org/main_ru/) 🛠️⚡️**
+> **烘焙未来。构建基质。[🌿 Intent Garden Org](https://intent-garden.org/main_zh/) 🛠️⚡️**
