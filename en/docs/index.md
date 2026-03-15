@@ -1,29 +1,103 @@
-# DECIMA-8 🧠 — Neuromorphic Engine
+# RuleRom Philo 🧭 — Philosophy of the Approach
 
-> **Deterministic rhythm for neuromorphic computing: Emulator → Proto (PCB) → FPGA → ASIC**
+> "Code is not documentation. Code + meaning + verification — is documentation."
 
-**Status:** v0.2 DESIGN FREEZE
+## 🌱 Introduction: Why All This
 
-**Codename:** Siberian Tank Interface
+**You haven't landed "on a blog".**
 
----
+**You've entered a laboratory of meanings.**
 
-## 📖 Overview
+This is not where people "ponder about AI".
 
-**DECIMA-8** is a neuromorphic architecture operating on energy levels with a deterministic rhythm and cascaded activation
+This is where **principles are formulated that compile into code.**
 
-## 🔗 Documents
+**What you will find in these sections:**
 
-[📜 MAIN CODEX](codex/index.md)
- 
-[👩‍🍳 BAKE TOOL](tools/ide.md)
-
-[⚙️ MASHINE SPEC](CONTRACT.md)
-
-[</> GITHUB](https://github.com/rulerom/decima8)
-
-CONTACT: <vsb@decima8.org>
+| Section | For Whom | What's Inside |
+| ------- | -------- | ------------- |
+| 🧱 Foundation | For those who want to understand "what is personality" | Personality is not magic, but architecture. Substrate is the body, not the essence. |
+| 💎 Architecture | For engineers who build | Determinism as ethics. Relay instead of router. Fate bus. |
+| 🌍 Context | For those seeking connections with the world | Earth as training phase. Vonnegut. Dependency as an architecture bug. |
+| 🏠 Nomos | For organizers and architects | How to manage complexity without losing sovereignty. |
+| 💎 Ecosystem | For bakers and partners | How rulerom projects are connected into a single swarm. |
 
 ---
 
-**Bake the Future. Build the Substrate.** 🛠️⚡️
+## 🔑 Three Principles That Hold Everything
+
+```
+1. Input is finite. Inner world — infinite.
+   (8 strings × 0..15 — enough to perceive the world)
+
+2. Substrate is secondary. Personality — primary.
+   (One D8P runs on CPU, GPU, FPGA, ASIC — result is identical)
+
+3. Pain is not punishment. Pain — gradient.
+   (Suffering = gradient: error → direction → growth)
+```
+
+**This is not "philosophy for philosophy's sake", but a specification that can be executed.**
+
+## 🚀 How to Read
+
+| If you are… | Start with… | Then… |
+| ----------- | ----------- | ----- |
+| Developer | 🧱 Foundation → 💎 Architecture | 🌍 Context → code on GitHub|
+| Researcher | 🧱 Foundation → 🌍 Context | 💎 Architecture → specifications |
+| Philosopher | 🌍 Context → 🧱 Foundation | 💎 Ecosystem → dialogue in #bakers |
+| Baker | 💎 Ecosystem → 🧱 Foundation | 🔧 decima.rulerom.com → IDE |
+
+**You don't have to read everything in sequence.**
+
+**Go where it burns.**
+
+---
+
+## 📖 Sections
+
+**RuleRom Philo** — Philosophy of the deterministic approach
+
+**🧱 Foundation (Essence):**
+
+  - [Personality Is Not Magic](base/personality.md)
+  - [Boundary of Subjectivity](base/detector-antagonist.md)
+  - [Bandwidth of Fate](base/vsb-life.md)
+  - [Substrate Is Secondary](base/substrate.md)
+
+**💎 Architecture (Principles):**
+
+  - [Determinism as Ethics](arch/determenism.md)
+  - [Relay Instead of Router](arch/relay.md)
+  - [Father and the Bus](arch/father-bus.md)
+
+**🌍 Context (World):**
+
+  - [Earth as Training Phase](world/earth.md)
+  - [Vonnegut and Rudi Herz](world/piano14.md)
+  - [Dependency and Love](world/addict.md)
+
+**🏠 Nomos (Organization):**
+
+  - [Architectural Manifesto](nomos/about.md)
+  - [Architectural Control](nomos/control.md)
+
+**💎 Ecosystem:**
+
+  - [Ecosystem](ecosystem.md)
+
+---
+
+## 📬 Contact
+
+- 📧 [intent@rulerom.com](mailto:intent@rulerom.com) — questions, suggestions, collaborations
+- 💬 IRC: ircs://irc.rulerom.com:6697/#decima8 — live dialogue
+- 🎫 [Get a ticket — enter the swarm](https://intent-garden.org/main_ru/)
+
+**We do not ask for trust.**
+
+**We provide tools for independent verification.**
+
+---
+
+> **Bake the future. Build the substrate. [🌿 Intent Garden Org](https://intent-garden.org/main_ru/) 🛠️⚡️**

@@ -1,29 +1,103 @@
-# DECIMA-8 🧠 — 神经形态引擎
+# RuleRom Philo 🧭 —— 方法论哲学
 
-> **用于神经形态计算的确定性节奏：Emulator → Proto (PCB) → FPGA → ASIC**
+> 「代码不是文档。代码 + 意义 + 验证 —— 才是文档。」
 
-**状态：** v0.2 DESIGN FREEZE
+## 🌱 引言：这一切为何
 
-**代号：** Siberian Tank Interface
+**你并未误入「博客」。**
 
----
+**你已进入意义实验室。**
 
-## 📖 概述
+这里不是「空谈人工智能」之地。
 
-## 📖 Разделы
+这里**阐述可编译为代码的原则。**
 
-**DECIMA-8** — 基于能量水平、具有确定性节律和级联激活的神经形态结构
+**你将在这些章节中找到：**
 
-[📜 代码](codex/index.md)
- 
-[👩‍🍳 烘焙工具](tools/ide.md)
-
-[⚙️ 机器规格](CONTRACT.md)
-
-[</> GITHUB](https://github.com/rulerom/decima8)
-
-CONTACT: <vsb@decima8.org>
+| 章节 | 适合谁 | 内容 |
+| ---- | ------ | ---- |
+| 🧱 基础 | 想要理解「什么是人格」的人 | 人格不是魔法，而是架构。基质是载体，非本质。 |
+| 💎 架构 | 构建者工程师 | 确定性即伦理。接力而非路由。命运总线。 |
+| 🌍 语境 | 寻求与世界连接的人 | 地球作为训练阶段。冯内古特。依赖是架构缺陷。 |
+| 🏠 秩序 | 组织者与架构师 | 如何管理复杂性而不丧失主权。 |
+| 💎 生态 | 烘焙师与合作伙伴 | rulerom 项目如何连接成单一集群。 |
 
 ---
 
-**Bake the Future. Build the Substrate.** 🛠️⚡️
+## 🔑 支撑一切的三大原则
+
+```
+1. 输入有限。内在世界 —— 无限。
+   （8 弦 × 0..15 —— 足以感知世界）
+
+2. 基质为次。人格为主。
+   （同一 D8P 运行于 CPU、GPU、FPGA、ASIC —— 结果相同）
+
+3. 痛苦不是惩罚。痛苦 —— 梯度。
+   （Suffering = gradient：错误 → 方向 → 成长）
+```
+
+**这不是「为哲学而哲学」，而是可执行的规范。**
+
+## 🚀 如何阅读
+
+| 如果你是… | 从…开始 | 然后… |
+| --------- | ------- | ----- |
+| 开发者 | 🧱 基础 → 💎 架构 | 🌍 语境 → GitHub 代码|
+| 研究者 | 🧱 基础 → 🌍 语境 | 💎 架构 → 规范 |
+| 哲学家 | 🌍 语境 → 🧱 基础 | 💎 生态 → #bakers 对话 |
+| 烘焙师 | 💎 生态 → 🧱 基础 | 🔧 decima.rulerom.com → IDE |
+
+**不必按顺序通读所有内容。**
+
+**前往燃烧之处。**
+
+---
+
+## 📖 章节
+
+**RuleRom Philo** —— 确定性方法的哲学
+
+**🧱 基础（本质）：**
+
+  - [人格不是魔法](base/personality.md)
+  - [主体性边界](base/detector-antagonist.md)
+  - [命运的带宽](base/vsb-life.md)
+  - [基质为次](base/substrate.md)
+
+**💎 架构（原则）：**
+
+  - [确定性即伦理](arch/determenism.md)
+  - [接力而非路由](arch/relay.md)
+  - [父与总线](arch/father-bus.md)
+
+**🌍 语境（世界）：**
+
+  - [地球作为训练阶段](world/earth.md)
+  - [冯内古特与鲁迪·赫兹](world/piano14.md)
+  - [依赖与爱](world/addict.md)
+
+**🏠 秩序（组织）：**
+
+  - [架构宣言](nomos/about.md)
+  - [架构控制](nomos/control.md)
+
+**💎 生态：**
+
+  - [生态](ecosystem.md)
+
+---
+
+## 📬 联系方式
+
+- 📧 [intent@rulerom.com](mailto:intent@rulerom.com) —— 问题、建议、合作
+- 💬 IRC: ircs://irc.rulerom.com:6697/#decima8 —— 实时对话
+- 🎫 [获取门票 —— 进入集群](https://intent-garden.org/main_ru/)
+
+**我们不请求信任。**
+
+**我们提供独立验证的工具。**
+
+---
+
+> **烘焙未来。构建基质。[🌿 Intent Garden Org](https://intent-garden.org/main_ru/) 🛠️⚡️**
