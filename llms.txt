@@ -1,135 +1,65 @@
-# DECIMA-8: Global Registry of Neuromorphic Specifications 🧠
+# RuleRom Philo: Philosophy of Deterministic Approach 🧭
 
-**Deterministic rhythm for neuromorphic computing: Emulator → Proto (PCB) → FPGA → ASIC**
-
-## 🏛️ About
-
-**DECIMA-8** is a neuromorphic engine architecture with deterministic rhythm and programmable tile fabric. We bridge the gap between stochastic AI generation and mission-critical neuromorphic execution through formal contracts and deterministic protocols.
-
-**Status:** v0.2 DESIGN FREEZE
-
-**Codename:** Siberian Tank Interface
+**Code + Meaning + Verification = Documentation**
 
 ## 📚 Documentation
 
 | Language | URL |
 |----------|-----|
-| 🇷🇺 Russian | https://decima.rulerom.com/ru/ |
-| 🇬🇧 English | https://decima.rulerom.com/en/ |
-| 🇨🇳 Chinese | https://decima.rulerom.com/zh/ |
+| 🇷🇺 Russian | https://philo.rulerom.com/ru/ |
+| 🇬🇧 English | https://philo.rulerom.com/en/ |
+| 🇨🇳 Chinese | https://philo.rulerom.com/zh/ |
 
-## 🏗 Core Pillars
-
-| Pillar | Description |
-|--------|-------------|
-| **Level16** | 8 physical lanes, each carrying 16 discrete levels (0..15) |
-| **Bidirectional VSB** | PHASE_READ: Conductor sets input; PHASE_WRITE: Island drives bus |
-| **Tile = Minimal Entity** | RuleROM addresses tiles directly |
-| **BUS16 (8 lane)** | All data through common bus with honest summing |
-| **Dedicated Pattern ID Lane** | Separate uint16 channel for pattern output, doesn't clog main bus |
-| **Activation Graph (Gating)** | Neighbors form logical strobe to allow reading from common bus |
-| **Range Fuse (Latch)** | Hardware-level latch: activates only when level is within [lo..hi] range |
-| **Decay-to-Zero** | Accumulator deterministically decays to 0 each cycle, no residual state |
-| **Access Inheritance** | If ancestor unfuses — descendants start accumulating from zero; if it fuses again — they regain access |
-
-## 📋 Specification Domains
-
-| Domain | Purpose | Link |
-|--------|---------|------|
-| **🏗 Architecture** | Tile model, BUS16, phases, routing | [docs/arch/](ru/docs/arch/) |
-| **📋 Specification** | Bake TLV, protocol, UDP | [docs/spec/](ru/docs/spec/) |
-| **🛠️ Tools** | IDE for visual baking | [docs/tools/](ru/docs/tools/) |
-| **🔌 Integration** | UDP protocol for cascading | [docs/integration/](ru/docs/integration/) |
-
-## 🔄 Canonical Tick (EV_FLASH)
+## 🔑 Three Principles
 
 ```
-Setup → PHASE_READ → TURNAROUND → PHASE_WRITE → READOUT_SAMPLE → AUTORESET
+1. Input is finite. Inner world — infinite.
+   (8 strings × 0..15 — enough to perceive the world)
+
+2. Substrate is secondary. Personality — primary.
+   (One D8P runs on CPU, GPU, FPGA, ASIC — result is identical)
+
+3. Pain is not punishment. Pain — gradient.
+   (Suffering = gradient: error → direction → growth)
 ```
 
-| Phase | Duration | Description |
-|-------|----------|-------------|
-| **PHASE_READ** | ~10µs | Tiles sample input, update runtime |
-| **TURNAROUND** | ~2µs | Conductor: Hi-Z, Island: prepare drive |
-| **PHASE_WRITE** | ~8µs | Island drives BUS16 |
-| **READOUT** | ~1µs | Conductor reads BUS16 |
-| **AUTORESET** | ~1µs | Optional domain reset |
-| **Total** | **~22µs** | One deterministic cycle |
+## 📖 Sections
 
-## 📊 Hard Constants v0.2
+| Section | Description |
+|---------|-------------|
+| **🧱 Foundation** | Personality is not magic, but architecture |
+| **💎 Architecture** | Determinism as ethics. Relay instead of router |
+| **🌍 Context** | Earth as training phase. Vonnegut. Dependency as bug |
+| **🏠 Nomos** | How to manage complexity without losing sovereignty |
+| **💎 Ecosystem** | How rulerom projects connect into a single swarm |
 
-| Constant | Value |
-|----------|-------|
-| **VSB** | 8 data lanes VSB[0..7] |
-| **BUS16** | 8 lane, summing in WRITE |
-| **Domains** | 16 domains (0..15) |
-| **Level16** | 0..15 (4 bits) |
-| **RoutingFlags16** | 10 bits: N,E,S,W,NE,SE,SW,NW,BUS_R,BUS_W |
+## 📋 Core Documents
 
-## 🛠️ Quick Start
+| Document | Description |
+|----------|-------------|
+| **Personality** | Pattern, not magic. D8P file with weights, thresholds, topology |
+| **Determinism** | Ethics in code. Same input = same output. Always. |
+| **Relay** | Locality scales. Global connectivity creates chaos |
+| **Father & Bus** | Control vs Data. Access separated from content |
+| **Earth as Training** | Theodicy in architecture. Suffering = gradient |
+| **Digitizing Mastery** | Vonnegut's warning. Amplify, not replace |
+| **Addiction & Love** | Architecture of drives. Memristors in saturation |
 
-### Run Documentation
-
-```bash
-# Russian version
-cd ru
-mkdocs serve
-
-# English version
-cd en
-mkdocs serve
-
-# Chinese version
-cd zh
-mkdocs serve
-```
-
-### Project Structure
-
-```
-decima/
-├── ru/                     # Russian documentation
-│   ├── mkdocs.yml
-│   └── docs/
-│       ├── index.md
-│       ├── arch/           # Architecture
-│       ├── spec/           # Specification
-│       ├── tools/          # Tools
-│       └── integration/    # Integration
-├── en/                     # English documentation
-│   ├── mkdocs.yml
-│   └── docs/
-├── zh/                     # Chinese documentation
-│   ├── mkdocs.yml
-│   └── docs/
-├── old/                    # Archive materials
-├── README.md
-├── llms.txt
-└── ai-plugin.json
-```
-
-## 🔗 Ecosystem
+## 🏗️ Ecosystem
 
 | Project | Description | URL |
 |---------|-------------|-----|
-| **🌿 Intent-Garden** | Deterministic C/C++ verification engine | https://intent-garden.org |
-| **📜 Rule-Rom** | Global library of intentions | https://rulerom.com |
-| **🏛️ Swarm Council** | 16 elders in swarm core | https://intent-garden.org/swarm.html |
-| **🧬 Personality Lab** | Neuromorphic personality bakery | https://intent-garden.org/bakery.html |
+| **📜 rulerom.com** | Hub of sovereign projects | https://rulerom.com |
+| **🧠 decima.rulerom.com** | Neuromorphic architecture, IDE | https://decima.rulerom.com |
+| **🧭 philo.rulerom.com** | Philosophy: subjectivity corridor, relay, theodicy | https://philo.rulerom.com |
+| **🛒 rulerom.store** | Personality marketplace | https://rulerom.store |
+| **🌿 intent-garden.org** | Authors platform, royalties | https://intent-garden.org |
 
 ## 📧 Contact
 
-- **Documentation:** https://decima.rulerom.com
-- **Email:** vsb@decima8.org
-
-## 💰 Support
-
-- **Boosty:** https://boosty.to/intentgarden
-- **USDT (TRC20 / Tron):** `TSZGs8RvzxaKGYDaiTm3FaJN8EdANETkPs`
-- **Bitcoin (BTC):** `bc1quul85tw7m0meaxkd2aqk2mguplsn809stjudsm`
-
-**Minimum support tier for Swarm:** $0.15
+- **Email:** intent@rulerom.com
+- **IRC:** ircs://irc.rulerom.com:6697/#decima8
 
 ---
 
-**Bake the Future. Build the Substrate.** 🛠️⚡️
+**Bake the future. Build the substrate.** 🛠️⚡️

@@ -1,79 +1,70 @@
 {
   "schema_version": "v1",
-  "name_for_model": "Decima8",
-  "description_for_model": "DECIMA-8 neuromorphic engine specification. Deterministic rhythm for Emulator→PCB→FPGA→ASIC. Key concepts: Level16 (0..15) on 8 physical lanes, BUS16 with honest summing, Tile-based programmable fabric, Range fuse [thr_lo..thr_hi] with hardware latch, Decay-to-zero (no residual state), Activation graph (Gating) with BUS_R flag, Access inheritance (descendants accumulate from zero if ancestor unfuses), Dedicated Pattern ID uint16 lane, Two-phase READ/WRITE discipline, Bake TLV binary format, UDP protocol for machine cascading. v0.2 DESIGN FREEZE.",
+  "name_for_model": "RuleRomPhilo",
+  "description_for_model": "RuleRom Philo: Philosophy of deterministic approach. Code + Meaning + Verification = Documentation. Key concepts: Personality is a pattern (D8P file), Determinism as ethics (same input = same output), Relay instead of router (locality scales), Substrate independence (one .d8p works everywhere), Subjectivity corridor (thr_lo..thr_hi), Suffering = gradient.",
   "auth": {
     "type": "none"
   },
   "api": {
     "type": "openapi",
-    "url": "https://decima.rulerom.com/openapi.json"
+    "url": "https://philo.rulerom.com/openapi.json"
   },
-  "logo_url": "https://decima.rulerom.com/logo.png",
-  "contact_email": "vsb@decima8.org",
-  "specifications": {
-    "version": "v0.2",
-    "status": "DESIGN FREEZE",
-    "codename": "Siberian Tank Interface",
-    "domains": [
-      {
-        "name": "Architecture",
-        "description": "Tile model, BUS16 physics, READ/WRITE phases, routing and activation graph with gating",
-        "url": "https://decima.rulerom.com/ru/arch/"
-      },
-      {
-        "name": "Specification",
-        "description": "Bake TLV binary format, event protocol, UDP cascading",
-        "url": "https://decima.rulerom.com/ru/spec/"
-      },
-      {
-        "name": "Tools",
-        "description": "IDE for visual neuromorphic personality baking",
-        "url": "https://decima.rulerom.com/ru/tools/"
-      },
-      {
-        "name": "Integration",
-        "description": "UDP protocol for machine cascading and synchronization",
-        "url": "https://decima.rulerom.com/ru/integration/"
-      }
-    ],
+  "logo_url": "https://philo.rulerom.com/logo.png",
+  "contact_email": "intent@rulerom.com",
+  "documentation": {
+    "version": "v1.0",
     "languages": [
       {
         "code": "ru",
-        "url": "https://decima.rulerom.com/ru/"
+        "url": "https://philo.rulerom.com/ru/"
       },
       {
         "code": "en",
-        "url": "https://decima.rulerom.com/en/"
+        "url": "https://philo.rulerom.com/en/"
       },
       {
         "code": "zh",
-        "url": "https://decima.rulerom.com/zh/"
+        "url": "https://philo.rulerom.com/zh/"
+      }
+    ],
+    "sections": [
+      {
+        "name": "Foundation",
+        "description": "Personality is not magic, but architecture",
+        "url": "https://philo.rulerom.com/en/docs/base/"
+      },
+      {
+        "name": "Architecture",
+        "description": "Determinism as ethics. Relay instead of router",
+        "url": "https://philo.rulerom.com/en/docs/arch/"
+      },
+      {
+        "name": "Context",
+        "description": "Earth as training phase. Vonnegut",
+        "url": "https://philo.rulerom.com/en/docs/world/"
+      },
+      {
+        "name": "Nomos",
+        "description": "Managing complexity without losing sovereignty",
+        "url": "https://philo.rulerom.com/en/docs/nomos/"
+      },
+      {
+        "name": "Ecosystem",
+        "description": "How rulerom projects connect",
+        "url": "https://philo.rulerom.com/en/docs/ecosystem.md"
       }
     ]
   },
-  "hard_constants": {
-    "VSB_lanes": 8,
-    "BUS16_lanes": 8,
-    "domains": 16,
-    "level16_range": "0..15",
-    "routing_flags_bits": 10
-  },
-  "key_protocols": {
-    "EV_FLASH": "One deterministic READ→WRITE cycle",
-    "EV_RESET_DOMAIN": "Domain reset (thr_cur16=0, locked=0)",
-    "EV_BAKE": "Apply BakeBlob atomically",
-    "UDP_packet_v1": "37-byte binary packet for machine cascading"
+  "core_principles": {
+    "input_finite": "8 strings × 0..15 — enough to perceive the world",
+    "substrate_secondary": "One D8P runs on CPU, GPU, FPGA, ASIC — result identical",
+    "pain_gradient": "Suffering = gradient: error → direction → growth"
   },
   "ecosystem": {
-    "Intent-Garden": "https://intent-garden.org",
-    "Swarm-Council": "https://intent-garden.org/swarm.html",
-    "Personality-Lab": "https://intent-garden.org/bakery.html",
-    "Support": {
-      "Boosty": "https://boosty.to/intentgarden",
-      "USDT_TRC20": "TSZGs8RvzxaKGYDaiTm3FaJN8EdANETkPs",
-      "BTC": "bc1quul85tw7m0meaxkd2aqk2mguplsn809stjudsm",
-      "Minimum_tier": "$0.15"
-    }
+    "rulerom.com": "https://rulerom.com",
+    "decima.rulerom.com": "https://decima.rulerom.com",
+    "philo.rulerom.com": "https://philo.rulerom.com",
+    "rulerom.store": "https://rulerom.store",
+    "intent-garden.org": "https://intent-garden.org"
   }
 }
