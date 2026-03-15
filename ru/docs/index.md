@@ -62,7 +62,8 @@
 
   - [Личность — это не магия](base/personality.md)
   - [Граница субъектности](base/detector-antagonist.md)
-  - [Субстрат вторичен](base/substrate.md)
+  - [Полоса пропускания судьбы](base/vsb-life.md)
+  - [Субстрат вторичен](base/substrate.md) 
   
 **💎 Архитектура (Принципы):**
 
