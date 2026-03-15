@@ -1,0 +1,43 @@
+site_name: DECIMA-8 🧠 — Нейроморфный Движок
+site_url: https://decima.rulerom.com
+theme:
+  name: material
+  palette:
+    scheme: slate
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+  custom_dir: overrides
+
+plugins:
+  - search
+  - mermaid2
+
+extra_css:
+  - css/mermaid.css
+  - assets/rulerom.css
+
+extra:
+  analytics:
+    provider: yandex
+    property: 107711657
+
+nav:
+  - '📌 Главная': index.md
+  - '🧱 Фундамент (Суть)':
+    - 'Личность — это не магия': base/personality.md
+    - 'Граница субъектности': base/detector-antagonist.md
+    - 'Субстрат вторичен': base/substrate.md
+  - '💎 Архитектура (Принципы)': 
+    - 'Детерминизм как этика' : arch/determenism.md
+    - 'Эстафета вместо роутера' : arch/relay.md
+    - 'Отец и Шина' : arch/father-bus.md
+  - '🌍 Контекст (Мир)': 
+    - 'Земля как Training Phase' : world/earth.md
+    - 'Воннегут и Руди Герц' : world/piano14.md
+    - 'Зависимость и Любовь' : world/addict.md
+  - '🏠 Номос (Организация)': 
+    - 'Архитектурный Манифест' : nomos/about.md
+    - 'Архитектурное Управление' : nomos/control.md
+  - '💎 Экосистема': ecosystem.md
