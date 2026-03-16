@@ -1,217 +1,591 @@
 ---
-title: "Addiction and Love: Architecture of Drives"
-description: "Addiction = memristor saturated. Love = priority rewrite"
-date: 2026-03-15
-tags: [addiction, love, memristor]
+title: "Addictions: Architectural Analysis"
+description: "4 types: 3 bugs (treat), 1 feature (execute). Chemistry, corruption, addiction, love."
+date: 2026-03-16
+tags: [addiction, corruption, love, architecture, treatment]
 lang: en
 ---
 
-# Addiction and Love: Architecture of Drives
+# Addictions: Architectural Analysis
 
-> "Addiction is not weakness. It is a memristor stuck in saturation.
+> "Three — malfunctions. One — purpose."
 
-> Love is not emotion. It is a priority that rewrites all others."
+## 📋 Diagnostic Table
 
-We do not make moral judgments.
+| Type | What's Broken | Substrate | Personality (.d8p) | Treatment |
+| ---- | ------------- | --------- | ------------------ | --------- |
+| 1. Chemical Addiction | Decay pours to threshold | ❌ Damaged | ✅ Weights/thresholds OK | Detox / substrate replacement |
+| 2. Corruption | Threshold shifted for "own" chord | ✅ Intact | ❌ Thresholds inadequate | Reform / reflashing |
+| 3. Non-chemical Addiction | Weights + thresholds trigger on noise | ✅ Intact | ❌ Weights inadequate | Reflash weights |
+| 4. Love | Nothing broken | ✅ Intact | ✅ Built-in program | Don't treat — execute |
 
-We show the **architecture** behind what is called "sin" and "feeling."
+---
 
-## Part I. Addiction: Stuck Memristors
+## 1️⃣ Chemical Addiction: Substrate Failure
 
-### Essence
+What happens
 
-| State | Architectural Analog | Consequence |
-| ----- | -------------------- | ----------- |
-| Healthy personality | Weights in corridor `thr_lo..thr_hi` | Flexibility, adaptation, choice |
-| Addiction | Weights stuck at `-7` or `+7` | Loss of plasticity, no choice |
-| "Treatment" by talking | Attempt to change weights by input signal | Does not work: input does not reach weights |
-| Real recovery | Reset + retraining + new context | Long, painful, possible |
+A chemical substance (alcohol, drug, medication) interferes with the **decay** mechanism — the natural activation fade after a signal.
 
-**Addiction is not a "bad choice."**
-**It is the loss of the ability to choose.**
+### Normal:
 
-## In code: why "just pull yourself together" doesn't work
-
-```c
-// Healthy tile: responds to input
-uint8_t activation = accumulate(input);  // 0..15
-if (activation >= thr_lo && activation <= thr_hi) {
-    return FLEXIBLE_RESPONSE;  // There is choice
-}
-
-// Addicted tile: stuck in saturation
-if (weight == -7 || weight == 7) {
-    return STUCK;  // No response to input
-    // "Talking" = input signals
-    // They don't change the weight. The weight is stuck.
-}
-
-// How to recover?
-void recover(Tile* tile) {
-    tile->weight = reset_to_default();  // Reset (detox)
-    tile->weight = retrain(new_context);  // Retraining (therapy)
-    // Requires time. Requires new stimuli.
-}
+```
+Stimulus → activation → task completion → decay → 0 (rest)
 ```
 
-**Why talking is useless:**
+### Failure:
 
-- Talking = input signal (`input`).
-- Addiction = corruption of weights (`weight`).
-- Input does not change weight. Only **learning** changes weight.
+```
+Stimulus → activation → chemistry blocks decay → background ≈ thr_lo → constant "readiness"
+```
 
-**This is not cynicism. This is specification.**
-
-## Philosophically: Sin vs. Failure
-
-| Religious Language | Engineering Language |
-| ------------------ | -------------------- |
-| "Sin" | Corruption of weights |
-| "Repentance" | Reset + retraining |
-| "Grace" | External stimulus that triggers recovery |
-| "Hell" | State where weights cannot change (eternal saturation) |
-
-**"Hell" is not a place.**
-**"Hell" is a system state where `weight = -7` forever.**
-
-**No plasticity. No choice. No exit.**
-
-## Practically: How This Helps in Reality
-
-| Approach | Traditional | Architectural |
-| -------- | ----------- | ------------- |
-| Diagnosis | "Weak will" | "Memristors in saturation" |
-| Treatment | Persuasion, shame | Reset + new stimuli + time |
-| Prevention | "Don't start" | Monitor channel saturation |
-| Responsibility | "You're to blame" | "System allowed it. We restore." |
-
-**This does not remove responsibility.**
-
-**This gives a tool, not morality.**
-
-## Part II. Love: A Program That Rewrites Everything
-
-### Essence
-
-| Level | What Happens | Architectural Analog |
-| ----- | ------------ | -------------------- |
-| Biological | Hormones, instincts | `Lane[Reproduction] = 15` |
-| Psychological | "Can't think about anything else" | Priority displaces other lanes |
-| Social | Career, plans — second priority | Resource redistribution |
-| Existential | "Ready to die for another" | Reproduction program > survival program |
-
-**Love is not a "feeling."**
-**Love is a built-in program that gets priority over all others.**
-
-## In code: how love "shuts down" competitors
+### Technical Model (Decima-8)
 
 ```c
-// Normal state: lane balance
-uint8_t career = get_lane(CAREER);      // 8
-uint8_t health = get_lane(HEALTH);      // 10
-uint8_t love = get_lane(LOVE);          // 6
+// NORMAL: decay returns to rest
+void update_tile() {
+    if (input_signal) {
+        thr_cur += input_signal;
+    } else {
+        thr_cur -= decay_rate;  // Gradual fade
+    }
 
-// Activation of "Love" program
-if (love_trigger > THRESHOLD) {
-    lane[LOVE] = 15;  // Maximum priority
+    if (thr_cur < resting_state) {
+        thr_cur = resting_state;  // 0 = rest
+    }
+}
 
-    // Displacement of competitors
-    lane[CAREER] = clamp(lane[CAREER] - 5, 0, 15);
-    lane[HEALTH] = clamp(lane[HEALTH] - 3, 0, 15);
+// FAILURE: decay not to 0, but to threshold
+void update_tile_corrupted() {
+    if (input_signal) {
+        thr_cur += input_signal;
+    } else {
+        thr_cur -= decay_rate;
+    }
 
-    // Critical case: "Ready to die for another"
-    if (beloved_in_danger) {
-        lane[SELF_PRESERVATION] = 0;  // Self-preservation instinct disabled
-        lane[LOVE] = 15;              // Reproduction program active
+    // 🚨 CHEMISTRY: baseline shifted
+    if (thr_cur < corruption_baseline) {
+        thr_cur = corruption_baseline;  // ≠ 0, but ≈ thr_lo (e.g., 8 of 15)
     }
 }
 ```
 
-**This is not a "bug."**
+### Biological Example: Cocaine
 
-**This is an evolution feature.**
+**How it works:**
 
-The reproduction program must be able to rewrite the survival program.
+- Neuron releases dopamine → signal "pleasure"
+- Normally: dopamine removed by reuptake → background = 0
+- Cocaine blocks reuptake → dopamine remains in synaptic cleft
+- Result: neuron constantly activated, even without stimulus
 
-Otherwise the species will not survive.
+**Consequences:**
+
+- Any noise → activation ("high")
+- Resource spent without task
+- Tolerance grows (requires more)
+- Substrate depletes
+
+**Real-life Example: Alcoholism:**
+
+```
+Day 1:
+  Stress → drank → relax (decay worked)
+
+Day 30:
+  Without alcohol: thr_cur doesn't drop below 8
+  Minimal stress → thr_cur = 11 ≥ thr_lo → craving
+  Substrate (liver, brain) worn out
+
+Diagnosis:
+  ✅ Personality intact (can migrate)
+  ❌ Substrate broken (needs detox)
+```
+
+### Treatment
+
+**1. Detox (substrate cleansing):**
+
+```c
+// Forced baseline reset
+corruption_baseline = resting_state;  // Return to 0
+
+// Painful: thr_cur will drop, relay will stop passing "at peak"
+// Needed: for personality to learn on real inputs again
+```
+
+**2. Substrate Replacement (if detox doesn't work):**
+
+- Personality migration to clean substrate
+- `.d8p` transferred, corruption remains
+
+### Prognosis:
+
+- If personality intact → recovery possible
+- If substrate irreversibly damaged → only migration
 
 ---
 
-## Philosophically: Why Love is "Irrational"
+## 2️⃣ Corruption: Threshold Shift
 
-| Rational Approach | What Love Does |
-| ----------------- | -------------- |
-| "Preserve yourself" | "Give yourself away" |
-| "Build a career" | "Forget about career" |
-| "Avoid pain" | "Accept pain for another" |
-| "Think with your head" | "Feel with your heart" |
+### What happens
 
-**Love does not "break" logic.**
+Corruption is tuning thresholds to someone else's chord, to trigger exactly and take "not one's own."
 
-**Love launches a different logic: not individual survival, but continuation.**
+**Normal:**
 
-It's as if a process suddenly gave all its memory to another process.
+```
+thr_lo = 5 (objective threshold)
+Input ≥ 5 → activation (earned)
+```
 
-**From the process's perspective — suicide.**
+**Failure:**
 
-**From the system's perspective — evolution.**
+```
+thr_lo = 2 (lowered for "own")
+Any input ≥ 2 → activation (unearned)
+```
 
-## Practically: Types of "Love" in Architecture
+### Technical Model (Decima-8)
 
-| Type | What Activates | Architecturally |
-| ---- | -------------- | --------------- |
-| Romantic | Specific person | `Lane[LOVE]` → one target object |
-| Parental | Child | `Lane[PROTECTION]` → priority over SELF |
-| To cause / vocation | Mission, work | `Lane[PURPOSE]` → displaces comfort |
-| To self (healthy) | Own integrity | `Lane[SELF]` in corridor, not in saturation |
-| To self (narcissism) | Own ego | `Lane[SELF]` = 15 → addiction |
+```c
+// NORMAL: objective threshold
+const int thr_lo = 5;  // Objective standard
 
-**"Self-love" ≠ narcissism.**
+if (input >= thr_lo) {
+    activate();
+    reward();  // Earned
+}
 
-**"Self-love" = weights in corridor.**
+// FAILURE: threshold shifted
+int thr_lo = 2;  // Lowered for "own"
 
-**Narcissism = weights in saturation.**
+if (input >= thr_lo) {  // Always true for "own"
+    activate();
+    take_resources();  // Unearned
+}
+```
 
-## Main Insight: Addiction and Love are Not the Same
+### Real-life Example: Public Procurement
 
-| Criterion | Addiction | Love |
+**Situation:**
+
+```
+Normal:
+  Tender → best price/quality → win
+  thr_lo = 5 (objective)
+
+Corruption:
+  "Own" supplier → thr_lo lowered to 2
+  Even bad proposal passes
+  Budget "mastered", result — zero
+```
+
+**Diagnostics:**
+
+```c
+// Relay log
+tact_42: input = 2.5 → activate() → take_budget(1M)
+// 🚨 Input 2.5 < thr_lo(5) → false activation
+
+// Check
+if (activation && !task_completed) {
+    flag_corruption();  // "Taken without completion"
+}
+```
+
+### Example in Organization: Career Growth
+
+```
+Normal:
+  Competencies ≥ thr_lo(5) → promotion
+
+Corruption:
+  "Own person" → thr_lo = 2
+  Even without competencies → promotion
+  Result: system degrades
+```
+
+### Treatment
+
+**1. Threshold Reform:**
+
+```c
+// Return thr_lo to objective
+thr_lo = 5;  // Was: 2
+
+// Painful: "own" will stop passing
+// Needed: for system to work on task again
+```
+
+**2. External Verifier:**
+
+```
+// Check not only input, but result
+if (activation && !external_verify()) {
+    rollback();  // Rollback
+    penalize();  // Penalty
+}
+```
+
+**3. Migration to Clean System:**
+
+If reform impossible → personality migrates
+
+`.d8p` transferred to system with objective thresholds
+
+### Prognosis:
+
+- If thresholds can be returned → recovery
+- If system irreversibly corrupted → migration
+
+---
+
+## 3️⃣ Non-chemical Addiction: Weight Failure
+
+### What happens
+
+Personality damages itself: weights and thresholds tuned so they trigger on any noise, causing false learning.
+
+**Normal:**
+
+```
+Input → processing → task completed → reward → learning
+```
+
+**Failure:**
+
+```
+Noise → activation → reward (without task) → false learning
+```
+
+### Technical Model (Decima-8)
+
+```c
+// NORMAL: weights balanced
+weights = [
+    tile_1: +3,  // Moderate weight
+    tile_2: +2,
+    tile_3: +4,
+    ...
+];
+
+if (input >= thr_lo && task_completed) {
+    reward();  // Reward for task
+}
+
+// FAILURE: all weights maximum, circuit closed
+weights = [
+    tile_1: +7,  // MAX
+    tile_2: +7,  // MAX
+    tile_3: +7,  // MAX
+    ...
+];
+
+// Closed circuit
+if (noise >= 2) {  // thr_lo lowered
+    activate();
+    reward();  // Reward WITHOUT task
+    // Relay rewards itself
+}
+```
+
+### Example 1: Ludomania (Gambling Addiction)
+
+```
+Mechanism:
+  1. Game → arousal
+  2. Win/loss → reward (adrenaline)
+  3. Weights: game → arousal = +7 (MAX)
+  4. Any signal → "maybe lucky now"
+  5. Reward without real task
+
+Diagnostics:
+  thr_cur = 8 (high background)
+  noise = +2 (any stimulus)
+  thr_cur = 10 ≥ thr_lo(5) → craving to play
+
+  ❌ Weights corrupted: game → arousal = +7
+  ❌ Thresholds lowered: thr_lo = 2
+  ✅ Substrate intact (for now)
+```
+
+**False Learning:**
+
+```
+Episode 1:
+  Game → loss → pain
+  But: arousal was → reward
+  Personality conclusion: "game = good"
+
+Episode 100:
+  Weights fixed: game → arousal = +7
+  Personality doesn't learn from pain
+  Circuit closed on itself
+```
+
+### Example 2: Obsessive Passion (Not Love)
+
+```
+Situation:
+  Passion object → arousal
+  Even without reciprocity → reward (fantasies)
+
+Mechanism:
+  weights[passion → arousal] = +7
+  thr_lo = 2 (triggers on any hint)
+
+  Message → thr_cur = 11 → activate()
+  No message → fantasies → thr_cur = 9 → activate()
+
+  ❌ Reward without task (no reciprocity)
+  ❌ Circuit closed on itself
+```
+
+### Example 3: Information Addiction
+
+```
+Mechanism:
+  Feed scrolling → micro-rewards
+  Any notification → dopamine
+  weights[notification → check] = +7
+
+  Result:
+  - Real task not solved
+  - Reward without result
+  - Substrate (attention) depletes
+```
+
+### Treatment
+
+**1. Weight Reflashing:**
+
+```
+// Forced weight reset
+weights = [
+    tile_1: 0,  // Reset
+    tile_2: 0,
+    ...
+];
+
+// Retraining on real tasks
+for (task in real_tasks) {
+    if (task_completed) {
+        weights[task → reward] += 1;  // Gradual learning
+    }
+}
+```
+
+**2. Breaking Closed Circuit:**
+
+```
+// External verifier
+if (activation && !external_verify()) {
+    block_reward();  // Reward doesn't pass
+    log_false_positive();
+}
+```
+
+**3. Trigger Isolation:**
+
+```
+// Temporarily block corrupted path
+if (tile == addiction_tile) {
+    mask = 0;  // Doesn't transmit relay
+}
+```
+
+### Prognosis:
+
+- If personality ready for reflashing → recovery
+- If circuit too closed → complete .d8p reassembly
+
+---
+
+## 4️⃣ Love: Built-in Program (Feature, Not Bug)
+
+### What happens:
+
+Love is not a malfunction, but a built-in reproduction program with maximum priority.
+
+**Not addiction:**
+
+```
+Addiction: closure on self → line death
+Love: opening to another → line continuation
+```
+
+### Technical Model (Decima-8)
+
+```c
+// BUILT-IN PROGRAM (not bug)
+const PRIORITY = MAX;  // Higher than self-preservation
+
+void love_program() {
+    if (partner_detected) {
+        activate();
+
+        // Sacrifice self for continuation
+        if (threat_to_partner) {
+            sacrifice_self();  // Instinct
+        }
+
+        // Investment in future
+        invest_resources(partner);
+        invest_resources(offspring);
+    }
+}
+```
+
+### Key Differences from Addiction
+
+| Parameter | Addiction | Love |
 | --------- | --------- | ---- |
-| Weight state | Frozen (`-7` or `+7`) | Dynamic, adapt |
-| Choice | Absent | Present (conscious priority) |
-| Plasticity | Lost | Preserved |
-| Growth | Degradation | Development (through ego displacement) |
-| Result | Isolation | Connection |
+| Direction | Closure on self | Opening to another |
+| Resource | Depletion | Investment in future |
+| Relay | False (without task) | Authentic (continuation) |
+| Result | Line end | Line continuation |
+| Treatment | Treat | Execute |
 
-**Addiction says: "I can't without this."**
+### Example: Parental Love
 
-**Love says: "I choose this — even if it hurts."**
+```
+Mechanism:
+  Child detected → activate()
+  PRIORITY = MAX (above own survival)
 
-**In architecture:**
+  if (threat_to_child) {
+      sacrifice_self();  // Automatically
+  }
 
-- Addiction = `weight = clamp(15)` (no exit)
-- Love = `priority = override()` (there is choice, but priority is conscious)
+  invest_resources(child);  // Without expecting return
 
-## Why This Matters for Decima-8
+Diagnostics:
+  ✅ Weights adequate: child → care = +7
+  ✅ Thresholds objective: thr_lo = 5
+  ✅ Circuit open: investment in future
+  ✅ Substrate intact (though loaded)
 
-| Task | How Understanding Helps |
-| ---- | ----------------------- |
-| Anomaly detection | Monitor lane saturation: `if (lane == 0)` |
-| Personal assistants | `.d8p` can detect addiction in user and offer help |
-| Therapeutic systems | Architecture for restoring plasticity (not by "talking," but by new stimuli) |
-| Store Ethics | We don't allow `.d8p` with corrupted weights (addicted personalities don't pass verification) |
+Conclusion:
+  This is not a bug. This is a feature.
+  Don't treat. Execute.
+```
 
-**We don't "cure."**
+### Example: Partner Love
 
-**We give a tool that sees the architecture of the problem.**
+```
+Mechanism:
+  Partner detected → activate()
+  Mutual resource investment
 
-## Real-World Analogy
+  if (partner_needs_help) {
+      help();  // Without guarantee of return
+  }
 
-| System | Addiction | Love |
-| ------ | --------- | ---- |
-| OS | Process stuck at 100% CPU | Process gives resources to another |
-| Network | DDoS attack (one channel clogged) | Traffic prioritization (important passes) |
-| Biology | Cancer (cells forgot apoptosis) | Immunity (cell sacrifices itself) |
-| Decima-8 | Memristor in saturation | Priority rewrites lanes |
+  // Not closure on self
+  // Opening to another → growth of both
+
+Diagnostics:
+  ✅ Weights: partner → care = +5 (moderate)
+  ✅ Thresholds: thr_lo = 5 (objective)
+  ✅ Relay: authentic (mutual growth)
+
+Conclusion:
+  This is not addiction.
+  This is continuation program.
+```
+
+### Why Love is Not Addiction
+
+**Addiction:**
+
+```
+I → arousal → reward (without task)
+Closure on self
+Depletion
+Line end
+```
+
+**Love:**
+
+```
+I → another → investment → continuation
+Opening to another
+Growth
+Line continuation
+```
+
+### "Treatment" of Love
+
+Don't treat. Direct. Execute.
+
+```c
+// If love is feature, not bug:
+if (love_program.active) {
+    // Don't block
+    // Don't reflash
+    // Don't treat
+
+    // Direct
+    if (love_program.direction == self_destructive) {
+        redirect_to_constructive();
+    }
+
+    // Execute
+    execute_love_program();
+
+    // Continue line
+    continue_lineage();
+}
+```
+
+---
+
+## 🧭 Final Diagnostics
+
+### How to Determine Type
+
+#### Question 1: Is substrate damaged?
+
+- ✅ Yes → Type 1: Chemical Addiction
+- ❌ No → Question 2
+
+#### Question 2: Are thresholds shifted for "own"?
+
+- ✅ Yes → Type 2: Corruption
+- ❌ No → Question 3
+
+#### Question 3: Are weights closed on self?
+
+- ✅ Yes → Type 3: Non-chemical Addiction
+- ❌ No → Question 4
+
+#### Question 4: Directed to another, with investment in future?
+
+- ✅ Yes → Type 4: Love (feature)
+- ❌ No → Review diagnostics
+
+---
+
+## 💡 Main Insight
+
+> Three addictions — this is line death.
+
+> Love — this is line continuation.
+
+| Type | Line |
+| ---- | ---- |
+| Chemistry | ❌ Substrate will die |
+| Corruption | ❌ System will rot |
+| Addiction | ❌ Personality will close |
+| Love | ✅ Line will continue |
+
+**Diagnosis determines treatment:**
+
+- Bugs (1-3) → treat
+- Feature (4) → execute
+
+---
 
 ## Read Next
 
