@@ -110,6 +110,61 @@ LLM / вероятностная сеть:
 
 ---
 
+## В коде: как это выглядит
+
+```c
+// Детерминированный цикл Децимы (упрощённо)
+typedef struct {
+    uint32_t start_cycle;
+    uint32_t end_cycle;      // Может варьироваться
+    tile_activation_t trace[MAX_TILES];  // Бит-в-бит идентичен
+    output_t result;         // Бит-в-бит идентичен
+} execution_trace_t;
+
+execution_trace_t decima_run(VSBFrame frame, personality_t *p, substrate_t *s) {
+    execution_trace_t trace = {0};
+    trace.start_cycle = get_cycle_count();
+    
+    uint32_t tact = 0;
+    while (tact < MAX_TACTS) {
+        // Обработка такта
+        step(personality, frame, tact);
+        
+        // Логирование активаций (для трассировки)
+        log_activations(&trace, tact);
+        
+        // Ранний выход: если паттерн распознан
+        if (early_exit_condition_met(personality)) {
+            break;  // Выходим на такте 85, 142, 216 — как получится
+        }
+        
+        tact++;
+    }
+    
+    trace.end_cycle = get_cycle_count();
+    trace.result = personality->output;
+    
+    // ВАЖНО: trace — бит-в-бит воспроизводим при тех же входных условиях
+    return trace;
+}
+```
+
+### Контраст с вероятностной системой:
+
+```python
+# LLM: один запрос → разные следы
+trace1 = llm.run("2+2")  # [A→C→F], ответ "4"
+trace2 = llm.run("2+2")  # [B→D→E], ответ "Четыре"
+trace3 = llm.run("2+2")  # [A→X→?], ответ "зависит"
+
+# Decima-8: один запрос → один след
+trace1 = decima.run(frame, personality)  # [A→B→D→F], "7", 142 такта
+trace2 = decima.run(frame, personality)  # [A→B→D→F], "7", 142 такта
+trace3 = decima.run(frame, personality)  # [A→B→D→F], "7", 142 такта
+```
+
+---
+
 ## Философски: свобода в коридоре
 
 > «Свобода воли ≠ хаос. Свобода = выбор в предсказуемых границах.»
