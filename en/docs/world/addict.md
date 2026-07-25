@@ -6,6 +6,8 @@ tags: [addiction, corruption, love, architecture, treatment]
 lang: en
 ---
 
+> **Archived philosophical essay.** This is a metaphor, not a medical model or treatment advice. Current verifiable example: [Whaler](whaler.md).
+
 # Addictions: Architectural Analysis
 
 > "Three — malfunctions. One — purpose."

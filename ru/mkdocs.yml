@@ -1,5 +1,5 @@
-site_name: RuleRom Philo 🧭 — Философия детерменированного подхода
-site_url: https://decima.rulerom.com
+site_name: Rule-ROM Philo — философия исполняемой личности
+site_url: https://philo.rulerom.com
 theme:
   name: material
   palette:
@@ -24,22 +24,25 @@ extra:
     property: 107711657
 
 nav:
-  - '📌 Главная': index.md
-  - '🧱 Фундамент (Суть)':
-    - 'Личность — это не магия': base/personality.md
-    - 'Граница субъектности': base/detector-antagonist.md
-    - 'Полоса пропускания судьбы': base/vsb-life.md
-    - 'Субстрат вторичен': base/substrate.md
-  - '💎 Архитектура (Принципы)': 
-    - 'Детерминизм как этика' : arch/determenism.md
-    - 'Эстафета вместо роутера' : arch/relay.md
-    - 'Отец и Шина' : arch/father-bus.md
-  - '🌍 Контекст (Мир)': 
-    - 'Земля как Training Phase' : world/earth.md
-    - 'Воннегут и Руди Герц' : world/piano14.md
-    - 'Зависимость и Любовь' : world/addict.md
-  - '🏠 Номос (Организация)': 
-    - 'Архитектурный Манифест' : nomos/about.md
-    - 'Архитектурное Управление' : nomos/control.md
-    - 'Суверенитет для авторов' : nomos/suveren.md
-  - '💎 Экосистема': ecosystem.md
+  - Главная: index.md
+  - Фундамент:
+      - Архитектор и пекарь: base/architect.md
+      - Личность: base/personality.md
+      - Восемь струн VSB: base/vsb-life.md
+      - Коридор реакции: base/detector-antagonist.md
+      - Субстрат: base/substrate.md
+  - Архитектура:
+      - Детерминизм: arch/determenism.md
+      - Граф допуска: arch/relay.md
+      - VSB и BUS16: arch/father-bus.md
+  - Практика:
+      - Whaler: world/whaler.md
+  - Архив метафор:
+      - Земля как Training Phase: world/earth.md
+      - Воннегут и Руди Герц: world/piano14.md
+      - Зависимость и любовь: world/addict.md
+  - Номос:
+      - Архитектурный манифест: nomos/about.md
+      - Архитектурное управление: nomos/control.md
+      - Суверенитет для авторов: nomos/suveren.md
+  - Экосистема: ecosystem.md

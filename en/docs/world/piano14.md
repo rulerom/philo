@@ -6,6 +6,8 @@ tags: [Vonnegut, mastery, digitization]
 lang: en
 ---
 
+> **Archived philosophical essay.** This is a metaphor of craft, not a claim that human personality can be transferred. Current verifiable example: [Whaler](whaler.md).
+
 # Vonnegut and Rudy Gertz: Digitizing Mastery
 
 > "We are not replacing the master. We give the master a voice that speaks at 20 microseconds."

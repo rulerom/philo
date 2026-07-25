@@ -1,5 +1,5 @@
-site_name: DECIMA-8 🧠 — Neuromorphic Engine
-site_url: https://decima.rulerom.com
+site_name: Rule-ROM Philo — Philosophy of Executable Personality
+site_url: https://philo.rulerom.com
 theme:
   name: material
   palette:
@@ -24,23 +24,24 @@ extra:
     property: 107711657
 
 nav:
-  - '📖 Home':
-    - 'Overview': index.md
-    - 'Codex': codex/index.md
-    - 'Contract': CONTRACT.md
-    - 'IDE': tools/ide.md
-
-  - '🏗 Architecture':
-    - 'Tiles': arch/tiles.md
-    - 'BUS16': arch/bus.md
-    - 'READ/WRITE Phases': arch/phase.md
-    - 'Routing': arch/routing.md
-
-  - '📋 Specification':
-    - 'Bake TLV': spec/bake.md
-    - 'Protocol': spec/protocol.md
-
-  - '🔌 Integration':
-    - 'UDP Protocol': integration/udp.md
-
-  - '💎 Ecosystem': ecosystem.md
+  - Home: index.md
+  - Foundation:
+      - Architect and baker: base/architect.md
+      - Personality: base/personality.md
+      - Eight VSB lanes: base/vsb-life.md
+      - Reaction corridor: base/detector-antagonist.md
+      - Substrate: base/substrate.md
+  - Architecture:
+      - Determinism: arch/determenism.md
+      - Permission graph: arch/relay.md
+      - VSB and BUS16: arch/father-bus.md
+  - Practice:
+      - Whaler: world/whaler.md
+  - Metaphor archive:
+      - Earth as Training Phase: world/earth.md
+      - Vonnegut and Rudy Gertz: world/piano14.md
+      - Addiction and love: world/addict.md
+  - Nomos:
+      - Architecture manifesto: nomos/about.md
+      - Architecture governance: nomos/control.md
+  - Ecosystem: ecosystem.md

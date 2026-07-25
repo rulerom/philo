@@ -6,6 +6,8 @@ tags: [theodicy, Earth, training, evil]
 lang: en
 ---
 
+> **Archived philosophical essay.** This is a metaphor, not a description of the v3 runtime or a theological model. Current verifiable example: [Whaler](whaler.md).
+
 ## Earth as Training Phase: Theodicy in Architecture
 
 > "Suffering is not punishment. Suffering is gradient. Choice is not magic. Choice is weights."

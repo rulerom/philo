@@ -1,37 +1,26 @@
 ---
-title: "rulerom.com — Ecosystem of Sovereign Projects"
-description: "Catalog of sovereign projects: decima, philo, audrey, c-safe, bakery, pki"
-date: 2026-03-15
-tags: [ecosystem, projects, sovereignty, verification]
+title: "Rule-ROM Ecosystem"
+description: "How philosophy, Decima-8, the bakery, and Whaler fit together"
+date: 2026-07-25
+tags: [ecosystem, Decima, Whaler, baker, verification]
 lang: en
 ---
 
-# rulerom.com :: catalog of sovereign projects united by philosophy:
+# Rule-ROM Ecosystem
 
-«Theodicy in code. Suffering = gradient.»
+Philo describes principles. Verification happens in code, artifacts, and applications.
 
-Each project is independent. All projects are verifiable. The entire ecosystem is open.
+| Domain | Role |
+| --- | --- |
+| [Rule-ROM](https://rulerom.com/en/) | Registry of projects and publication boundaries |
+| [Decima-8](https://decima.rulerom.com/en/) | v3 physics, runtime, `.d8p` format, IDE, and benchmarks |
+| [Bakery](https://bakery.rulerom.com/en/) | Architect tools for building and auditing personalities |
+| [Whaler](https://whaler.rulerom.com/) | First applied family: market tape, event sensor, and trading contour |
+| [C-SAFE](https://c-safe.rulerom.com/en/) | Verification and audit |
+| [PKI](https://pki.rulerom.com/en/) | Signatures and artifact provenance |
 
----
+## Publication Boundary
 
-**🗺️ Architecture: Hub → Project → Depth**
+A verifiable contract does not require publishing all intellectual property. The format, runtime physics, hashes, and verification method may be open while a particular bakery, training tapes, and application rules remain private.
 
-- [rulerom.com](https://rulerom.com/en/) (Hub)
-- [decima.rulerom.com](https://decima.rulerom.com/en/) → Neuromorphic architecture, IDE, benchmarks
-- [philo.rulerom.com](https://philo.rulerom.com/en/) → Philosophy: corridor of subjectivity, relay, theodicy
-- [audrey.rulerom.com](https://audrey.rulerom.com/en/) → Audio experiments on vacuum substrate
-- [c-safe.rulerom.com](https://c-safe.rulerom.com/en/) → Security: verification, audit, sovereign stack
-- [bakery.rulerom.com](https://bakery.rulerom.com/en/) → Baking tools: best practices from world bakeries
-- [pki.rulerom.com](https://pki.rulerom.com/en/) → Signature infrastructure: Ed25519, verification, registry
-
----
-
-## Principle:
-
-- One project = one subdomain = clear boundaries
-- Independent deploy, independent documentation
-- Unified philosophy, unified verification standard
-
----
-
-## Founded by [🌿 Intent Garden Org](https://intent-garden.org/main/)
+This boundary matters for personality: a user can know what is executed and verify that a `.d8p` is unchanged without automatically receiving its creation recipe.

@@ -1,111 +1,60 @@
 ---
-title: "RuleRom Philo — Philosophy of the Approach"
-description: "Philosophy of deterministic approach: personality is a pattern, substrate is secondary, suffering is gradient"
-date: 2026-03-15
-tags: [philosophy, personality, determinism, architecture]
+title: "Rule-ROM Philo — philosophy of executable personality"
+description: "The architect defines personality, the environment supplies tape, and Decima lives through it deterministically"
+date: 2026-07-25
+tags: [philosophy, architect, baker, personality, Decima]
 lang: en
 ---
 
-# RuleRom Philo 🧭 — Philosophy of the Approach
+# Rule-ROM Philo
 
-> "Code is not documentation. Code + meaning + verification — is documentation."
+> The environment supplies history. The architect defines how to hear it. The substrate executes.
 
-## 🌱 Introduction: Why All This
+Philo is the meaning layer of Decima-8. It translates machine properties into design principles without presenting analogy as physics.
 
-**You haven't landed "on a blog".**
+## Four entities
 
-**You've entered a laboratory of meanings.**
+| Entity | What it does | What it does not do |
+| --- | --- | --- |
+| **Environment** | Produces a sequence of events | Does not know how it will be interpreted |
+| **Press** | Compresses the environment into eight VSB lanes | Does not make a decision |
+| **Architect (baker)** | Defines weights, corridors, decay, topology, domains, and reset | Does not alter the past tape |
+| **Decima substrate** | Deterministically executes `.d8p` over the tape | Does not invent the personality's goal |
 
-This is not where people "ponder about AI".
+Personality is neither weights alone nor history alone. It is a **designed boundary of reaction** that appears when `.d8p` meets a VSB sequence.
 
-This is where **principles are formulated that compile into code.**
+## Physical minimum
 
-**What you will find in these sections:**
+1. One common VSB frame is available to all ACTIVE tiles at once.
+2. Each tile hears it through its own signed matrix.
+3. `thr_cur` integrates history; decay provides forgetting.
+4. Lock retains state; FIRE marks a transition.
+5. Neighbours pass computation permission only, not data.
+6. Domains provide event competition and controlled reset.
 
-| Section | For Whom | What's Inside |
-| ------- | -------- | ------------- |
-| 🧱 Foundation | For those who want to understand "what is personality" | Personality is not magic, but architecture. Substrate is the body, not the essence. |
-| 💎 Architecture | For engineers who build | Determinism as ethics. Relay instead of router. Fate bus. |
-| 🌍 Context | For those seeking connections with the world | Earth as training phase. Vonnegut. Dependency as an architecture bug. |
-| 🏠 Nomos | For organizers and architects | How to manage complexity without losing sovereignty. |
-| 💎 Ecosystem | For bakers and partners | How rulerom projects are connected into a single swarm. |
+This produces event memory: a small fabric can recognize temporal form without a separate sequence buffer.
 
----
+## Responsibility of the baker
 
-## 🔑 Three Principles That Hold Everything
+The baker chooses what the eight strings mean, which event matters, what must be ignored, how much history to integrate, how quickly to forget, which branches become eligible after an intermediate lock, and which FIRE is the result.
 
-```
-1. Input is finite. Inner world — infinite.
-   (8 strings × 0..15 — enough to perceive the world)
+A `.d8p` is therefore not neutral. It is the author's frozen engineering intent and must be tested on independent tapes.
 
-2. Substrate is secondary. Personality — primary.
-   (One D8P runs on CPU, GPU, FPGA, ASIC — result is identical)
+## A grounded example
 
-3. Pain is not punishment. Pain — gradient.
-   (Suffering = gradient: error → direction → growth)
-```
+[Whaler](world/whaler.md) listens to market microstructure. A press turns trades into eight hydraulic quantities; Decima integrates their interaction and emits a rare event. The signal is not yet an order: a director applies context and risk.
 
-**This is not "philosophy for philosophy's sake", but a specification that can be executed.**
+This is more precise than imagining a “digital trader.” Decima is an event filter, the baker defines the filter, and the applied contour defines the action.
 
-## 🚀 How to Read
+## Reading path
 
-| If you are… | Start with… | Then… |
-| ----------- | ----------- | ----- |
-| Developer | 🧱 Foundation → 💎 Architecture | 🌍 Context → code on GitHub|
-| Researcher | 🧱 Foundation → 🌍 Context | 💎 Architecture → specifications |
-| Philosopher | 🌍 Context → 🧱 Foundation | 💎 Ecosystem → dialogue in #bakers |
-| Baker | 💎 Ecosystem → 🧱 Foundation | 🔧 decima.rulerom.com → IDE |
+- [Architect and baker](base/architect.md)
+- [What `.d8p` contains](base/personality.md)
+- [Common VSB input](base/vsb-life.md)
+- [Reaction corridor](base/detector-antagonist.md)
+- [Substrate and portability](base/substrate.md)
+- [Determinism and complete context](arch/determenism.md)
+- [Permission graph](arch/relay.md)
+- [Shared bus and readout](arch/father-bus.md)
 
-**You don't have to read everything in sequence.**
-
-**Go where it burns.**
-
----
-
-## 📖 Sections
-
-**RuleRom Philo** — Philosophy of the deterministic approach
-
-**🧱 Foundation (Essence):**
-
-  - [Personality Is Not Magic](base/personality.md)
-  - [Boundary of Subjectivity](base/detector-antagonist.md)
-  - [Bandwidth of Fate](base/vsb-life.md)
-  - [Substrate Is Secondary](base/substrate.md)
-
-**💎 Architecture (Principles):**
-
-  - [Determinism as Ethics](arch/determenism.md)
-  - [Relay Instead of Router](arch/relay.md)
-  - [Father and the Bus](arch/father-bus.md)
-
-**🌍 Context (World):**
-
-  - [Earth as Training Phase](world/earth.md)
-  - [Vonnegut and Rudi Herz](world/piano14.md)
-  - [Dependency and Love](world/addict.md)
-
-**🏠 Nomos (Organization):**
-
-  - [Architectural Manifesto](nomos/about.md)
-  - [Architectural Control](nomos/control.md)
-
-**💎 Ecosystem:**
-
-  - [Ecosystem](ecosystem.md)
-
----
-
-## 📬 Contact
-
-- 📧 [intent@rulerom.com](mailto:intent@rulerom.com) — questions, suggestions, collaborations
-- 💬 IRC: ircs://irc.rulerom.com:6697/#decima8 — live dialogue
-- 🎫 [Get a ticket — enter the swarm](https://intent-garden.org/main/)
-
-**We do not ask for trust.**
-
-**We provide tools for independent verification.**
-
----
-
-> **Bake the future. Build the substrate. [🌿 Intent Garden Org](https://intent-garden.org/main/) 🛠️⚡️**
+Earlier speculative essays remain in the repository as intellectual history, but the primary reading path follows current v3 physics.

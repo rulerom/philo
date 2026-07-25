@@ -1,93 +1,25 @@
 ---
-title: "I / NOT I: The Boundary of Subjectivity"
-description: "Subjectivity corridor thr_lo..thr_hi: how personality distinguishes me from not-me"
-date: 2026-03-15
-tags: [subjectivity, corridor, thresholds]
+title: "Reaction corridor"
+description: "Two thresholds define a latching window for accumulated state, not a moral judgement of input"
+date: 2026-07-25
+tags: [thresholds, corridor, fuse, architect]
 lang: en
 ---
 
-# I / NOT I: The Boundary of Subjectivity
+# Reaction corridor
 
-> ""I" is not a point. It is a corridor between 'too weak' and 'too strong'."
+A tile latches when its signed accumulator enters:
 
-While philosophers argue about where consciousness begins, engineers set thresholds.
-
-In Decim, subjectivity is not magic. It is a stable response within a given corridor.
-
-## Essence
-
-Personality is not defined by "what it is".
-
-It is defined by **what it accepts as its own, and what it rejects**.
-
-If a pattern arrives at the input:
-
-- **Too weak** (`< thr_lo`) → "This is not me" (insufficient similarity, noise)
-- **Too strong** (`> thr_hi`) → "This is not me either" (alien pattern, aggression, distortion)
-- **In the corridor** (`thr_lo..thr_hi`) → "This is me" (confirmed subjectivity)
-
-**The boundary is a filter.**
-
-Without it, personality "blurs": it accepts everything in a row or accepts nothing.
-
-## Evolution of the Principle
-
-| Version | Architecture | Philosophically |
-| ------- | ------------ | --------------- |
-| **V1: Detector + Antagonist** | Two cascades: "similar" ∧ "not alien" | Thesis + Antithesis = Synthesis |
-| **V2: Corridor (default)** | One cascade: `thr_lo..thr_hi` | The "I" boundary is embedded in the activation function |
-
-**V2 is not a simplification.**
-
-It is a compression of meaning: "NOT I" is no longer a separate tile, but the second threshold of the same function.
-
-## In Code
-
-```c
-// Accumulator with subjectivity corridor
-int16_t activation = accumulate(tile);  // -32k..+32k
-
-if (activation < thr_lo) {
-    return NOT_ME;      // Too weak: noise, background, not mine
-}
-if (activation > thr_hi) {
-    return NOT_ME;      // Too strong: alien pattern, overload
-}
-// In the corridor
+```text
+thr_lo <= thr_cur <= thr_hi
 ```
 
-### Why Two Thresholds?
+This is an engineering response window. Its bounds do not automatically mean “noise” and “foreign aggression.” Meaning belongs to the baker and the organ being built.
 
-- `thr_lo` cuts off **insufficient similarity** (protection against false positives on noise).
-- `thr_hi` cuts off **excessive similarity** (protection against "sticking" to an alien dominant signal).
+One threshold can only say “enough.” A corridor can isolate insufficient accumulation, a target combination, and overflow or another regime.
 
-## Philosophically
+Decay matters: state may enter the corridor while falling back from overload and create FIRE. The corridor describes a phase of local dynamics, not a static threshold on one frame.
 
-This is dialectics in its purest form:
+After latching, no new `delta` is added but decay continues. The tile unlocks after leaving the corridor or losing activation permission.
 
-- **Thesis:** "I am" (detector).
-- **Antithesis:** "I am not" (antagonist / upper threshold).
-- **Synthesis:** "I am within boundaries" (corridor).
-
-**Hegel described this with words.**
-
-**We encode this with thresholds.**
-
-**Subjectivity is not "all or nothing", subjectivity is a space of permissible states**.
-
-## Practically
-
-| Task | How the corridor helps |
-| ---- | ---------------------- |
-| Noise resistance | `thr_lo` ignores background fluctuations |
-| Protection from substitution | `thr_hi` rejects "too perfect" a match (attack) |
-| Adaptability | Thresholds can be tuned to context ("strict" / "soft" mode) |
-| Traceability | Every "I / NOT I" decision is logged with activation value |
-
----
-
-## Read Further
-
-- [Bandwidth of Fate](vsb-life.md)
-- [Substrate is Secondary, Intention is Primary](substrate.md)
-- [Determinism as Ethics](../arch/determenism.md)
+Philosophical boundary metaphors are useful only after this mechanism is kept intact: the corridor does not define good; it defines what the architect chose to recognize.
