@@ -21,6 +21,6 @@ Philo describes principles. Verification happens in code, artifacts, and applica
 
 ## Publication Boundary
 
-A verifiable contract does not require publishing all intellectual property. The format, runtime physics, hashes, and verification method may be open while a particular bakery, training tapes, and application rules remain private.
+A verifiable contract does not require publishing all intellectual property. The format, runtime physics, hashes, and verification method may be open while a particular bakery, source and validation tapes, and application rules remain private.
 
 This boundary matters for personality: a user can know what is executed and verify that a `.d8p` is unchanged without automatically receiving its creation recipe.
