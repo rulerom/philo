@@ -19,8 +19,8 @@
 2. Substrate is secondary. Personality — primary.
    (One D8P runs on CPU, GPU, FPGA, ASIC — result is identical)
 
-3. Pain is not punishment. Pain — gradient.
-   (Suffering = gradient: error → direction → growth)
+3. Personality is baked, then executed.
+   (The Architect defines the world, memory, event, and reset)
 ```
 
 ## 📖 Sections
@@ -29,7 +29,7 @@
 |---------|-------------|
 | **🧱 Foundation** | Personality is not magic, but architecture |
 | **💎 Architecture** | Determinism as ethics. Relay instead of router |
-| **🌍 Context** | Earth as training phase. Vonnegut. Dependency as bug |
+| **🌍 Philosophical models** | Vonnegut, the boundary of digitized mastery, dependence and love |
 | **🏠 Nomos** | How to manage complexity without losing sovereignty |
 | **💎 Ecosystem** | How rulerom projects connect into a single swarm |
 
@@ -41,9 +41,8 @@
 | **Determinism** | Ethics in code. Same input = same output. Always. |
 | **Relay** | Locality scales. Global connectivity creates chaos |
 | **Father & Bus** | Control vs Data. Access separated from content |
-| **Earth as Training** | Theodicy in architecture. Suffering = gradient |
-| **Digitizing Mastery** | Vonnegut's warning. Amplify, not replace |
-| **Addiction & Love** | Architecture of drives. Memristors in saturation |
+| **Rudy Hertz** | Vonnegut's warning: a reproducible fragment is not a person |
+| **Addiction & Love** | Reinstatement of shared context across subpersonalities |
 
 ## 🏗️ Ecosystem
 
@@ -51,7 +50,7 @@
 |---------|-------------|-----|
 | **📜 rulerom.com** | Hub of sovereign projects | https://rulerom.com |
 | **🧠 decima.rulerom.com** | Neuromorphic architecture, IDE | https://decima.rulerom.com |
-| **🧭 philo.rulerom.com** | Philosophy: subjectivity corridor, relay, theodicy | https://philo.rulerom.com |
+| **🧭 philo.rulerom.com** | Philosophy of baked personality, shared context, permission graph, and deterministic execution | https://philo.rulerom.com |
 | **🛒 rulerom.store** | Personality marketplace | https://rulerom.store |
 | **🌿 intent-garden.org** | Authors platform, royalties | https://intent-garden.org |
 

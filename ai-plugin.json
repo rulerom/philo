@@ -1,7 +1,7 @@
 {
   "schema_version": "v1",
   "name_for_model": "RuleRomPhilo",
-  "description_for_model": "RuleRom Philo: Philosophy of deterministic approach. Code + Meaning + Verification = Documentation. Key concepts: Personality is a pattern (D8P file), Determinism as ethics (same input = same output), Relay instead of router (locality scales), Substrate independence (one .d8p works everywhere), Subjectivity corridor (thr_lo..thr_hi), Suffering = gradient.",
+  "description_for_model": "RuleRom Philo: philosophy of deterministic architecture. Key concepts: a personality is a baked D8P artifact; the Architect defines VSB semantics, memory organs, event, and reset; runtime executes deterministically; a reproducible functional fragment is not a human person.",
   "auth": {
     "type": "none"
   },
@@ -39,8 +39,8 @@
         "url": "https://philo.rulerom.com/en/docs/arch/"
       },
       {
-        "name": "Context",
-        "description": "Earth as training phase. Vonnegut",
+        "name": "Philosophical models",
+        "description": "Vonnegut, digitized mastery, dependence, love, and the limits of architectural analogy",
         "url": "https://philo.rulerom.com/en/docs/world/"
       },
       {
@@ -58,7 +58,7 @@
   "core_principles": {
     "input_finite": "8 strings × 0..15 — enough to perceive the world",
     "substrate_secondary": "One D8P runs on CPU, GPU, FPGA, ASIC — result identical",
-    "pain_gradient": "Suffering = gradient: error → direction → growth"
+    "baked_personality": "The Architect bakes a fixed D8P artifact; runtime does not train it"
   },
   "ecosystem": {
     "rulerom.com": "https://rulerom.com",
