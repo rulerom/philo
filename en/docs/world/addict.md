@@ -1,596 +1,225 @@
 ---
-title: "Addictions: Architectural Analysis"
-description: "4 types: 3 bugs (treat), 1 feature (execute). Chemistry, corruption, addiction, love."
-date: 2026-03-16
-tags: [addiction, corruption, love, architecture, treatment]
+title: "Addiction and love: re-entering a state"
+description: "How memory, anticipation, and the body can reconstruct a shared context in which multiple subpersonalities relive the same world"
+date: 2026-07-25
+tags: [addiction, love, memory, VSB, subpersonalities, architecture]
 lang: en
 ---
 
-> **Archived philosophical essay.** This is a metaphor, not a medical model or treatment advice. Current verifiable example: [Whaler](whaler.md).
+# Addiction and love: re-entering a state
 
-# Addictions: Architectural Analysis
+> This is a philosophical and architectural model, not a claim about the proven structure of the brain, a diagnosis, or treatment advice.
 
-> "Three — malfunctions. One — purpose."
+Addiction is often described as excessive desire for an object, while love is described as proper orientation toward another person. Both formulas are too flat.
 
-## 📋 Diagnostic Table
+A system may return not to an object but to an **entire state of the world** that once formed around it. Attention, bodily readiness, anticipation, fear, hope, available actions, and the way the self is perceived can all be reconstructed. Multiple functional circuits then operate inside that restored environment.
 
-| Type | What's Broken | Substrate | Personality (.d8p) | Treatment |
-| ---- | ------------- | --------- | ------------------ | --------- |
-| 1. Chemical Addiction | Decay pours to threshold | ❌ Damaged | ✅ Weights/thresholds OK | Detox / substrate replacement |
-| 2. Corruption | Threshold shifted for "own" chord | ✅ Intact | ❌ Thresholds inadequate | Reform / reflashing |
-| 3. Non-chemical Addiction | Weights + thresholds trigger on noise | ✅ Intact | ❌ Weights inadequate | Reflash weights |
-| 4. Love | Nothing broken | ✅ Intact | ✅ Built-in program | Don't treat — execute |
+In the architectural language of Decima:
 
----
+> a substrate may not only receive a representation of its environment, but also reintroduce a reconstructed state onto a shared bus, causing a distributed personality to live through a similar configuration again.
 
-## 1️⃣ Chemical Addiction: Substrate Failure
+This does not claim that the brain contains a literal VSB. It transfers one architectural principle: local circuits may have no reliable way to determine the origin of the shared state to which they respond.
 
-What happens
+## The bus does not certify origin
 
-A chemical substance (alcohol, drug, medication) interferes with the **decay** mechanism — the natural activation fade after a signal.
+In engineered Decima, every ACTIVE tile receives the same VSB frame. A tile knows the current eight levels, its own weights, accumulated state, and graph permission. It receives no certificate of origin for the input.
 
-### Normal:
+The same format may come from:
 
-```
-Stimulus → activation → task completion → decay → 0 (rest)
-```
+- a live press;
+- a recorded tape;
+- a simulator;
+- a synthetic frame generator.
 
-### Failure:
+Given the same ordered frames, initial state, and reset schedule, a deterministic personality reproduces the same trace. For a tile, “the event is happening outside now” and “an exact recording of the event is being presented” are functionally indistinguishable.
 
-```
-Stimulus → activation → chemistry blocks decay → background ≈ thr_lo → constant "readiness"
-```
+In the biological analogy, a shared context can be shaped by more than immediate perception:
 
-### Technical Model (Decima-8)
+- memory;
+- imagination;
+- anticipation;
+- an internal model of another person;
+- dreams;
+- bodily state;
+- hormonal and autonomic background;
+- a repeatedly enacted posture, place, song, or ritual.
 
-```c
-// NORMAL: decay returns to rest
-void update_tile() {
-    if (input_signal) {
-        thr_cur += input_signal;
-    } else {
-        thr_cur -= decay_rate;  // Gradual fade
-    }
+The word “fake” is therefore imprecise. The external event may be absent, yet the system state is real. What may be mistaken is its attributed origin: the past is experienced as the present, anticipation as fact, or an internal image of another person as the person themselves.
 
-    if (thr_cur < resting_state) {
-        thr_cur = resting_state;  // 0 = rest
-    }
-}
+## What is reinstated
 
-// FAILURE: decay not to 0, but to threshold
-void update_tile_corrupted() {
-    if (input_signal) {
-        thr_cur += input_signal;
-    } else {
-        thr_cur -= decay_rate;
-    }
+A memory need not be an internal video recording. It may reconstruct a context:
 
-    // 🚨 CHEMISTRY: baseline shifted
-    if (thr_cur < corruption_baseline) {
-        thr_cur = corruption_baseline;  // ≠ 0, but ≈ thr_lo (e.g., 8 of 15)
-    }
-}
+```text
+small cue
+  -> partial state reinstatement
+  -> change in the shared context
+  -> recruitment of associated circuits
+  -> fuller reinstatement
 ```
 
-### Biological Example: Cocaine
+This creates positive feedback. A detail produces a bodily response; the bodily response confirms the detail's importance; attention selects matching evidence; associated memories complete the scene. The system is no longer looking at an image of the past. It is operating inside a rebuilt mode of life.
 
-**How it works:**
+Research on episodic memory describes **reinstatement**: retrieval can partially restore distributed patterns and temporal context from earlier experience. Memory is constructive, however, and the restored representation is not an exact copy of the original event. This supports the metaphor without proving a literal neuromorphic bus in the brain.
 
-- Neuron releases dopamine → signal "pleasure"
-- Normally: dopamine removed by reuptake → background = 0
-- Cocaine blocks reuptake → dopamine remains in synaptic cleft
-- Result: neuron constantly activated, even without stimulus
+## Subpersonalities share the same weather
 
-**Consequences:**
+A subpersonality here is not a small person inside a person. It is a functional ensemble: a way of protecting, caring, working, seeking recognition, avoiding pain, pursuing closeness, or controlling uncertainty.
 
-- Any noise → activation ("high")
-- Resource spent without task
-- Tolerance grows (requires more)
-- Substrate depletes
+These ensembles may have different goals, yet they receive a shared context. If internal reconstruction changes that context, many circuits must operate in the same “weather.”
 
-**Real-life Example: Alcoholism:**
+A reinstated state of loss may simultaneously:
 
-```
-Day 1:
-  Stress → drank → relax (decay worked)
+- narrow attention to signs of absence;
+- change bodily tone;
+- make a neutral pause resemble rejection;
+- activate a contact-seeking circuit;
+- inhibit working and exploratory circuits;
+- restore older defensive responses.
 
-Day 30:
-  Without alcohol: thr_cur doesn't drop below 8
-  Minimal stress → thr_cur = 11 ≥ thr_lo → craving
-  Substrate (liver, brain) worn out
+Each reaction may make sense locally. Capture occurs at the level of the shared context: different parts of the personality live through the same state again and confirm it through their own responses.
 
-Diagnosis:
-  ✅ Personality intact (can migrate)
-  ❌ Substrate broken (needs detox)
-```
+## Addiction as capture of shared context
 
-### Treatment
+Architecturally, addiction is interesting not merely because pleasure is strong, but because a mode becomes **self-sustaining**.
 
-**1. Detox (substrate cleansing):**
+A circuit becomes dependent when:
 
-```c
-// Forced baseline reset
-corruption_baseline = resting_state;  // Return to 0
+1. a small cue can reinstate a large context;
+2. the state is restored before it can decay;
+3. new external data gains less access to the shared context;
+4. more actions serve either to recreate or to relieve one state;
+5. alternative circuits receive less time and permission to act.
 
-// Painful: thr_cur will drop, relay will stop passing "at peak"
-// Needed: for personality to learn on real inputs again
-```
+Within this model, the object of addiction may be more than a reward source. It can be:
 
-**2. Substrate Replacement (if detox doesn't work):**
+- a switch into a familiar world;
+- a way to terminate an unbearable internal state;
+- confirmation of a familiar role;
+- a method for recovering intensity;
+- a ritual that synchronizes subpersonalities around one configuration.
 
-- Personality migration to clean substrate
-- `.d8p` transferred, corruption remains
+Removing the object may therefore fail to dissolve the loop immediately. Memory, anticipation, fantasy, bodily deficit, or a search scenario can continue feeding its world into the shared context. The external object is gone, but the system keeps reconstructing the world organized around it.
 
-### Prognosis:
+This is not a universal clinical theory. Substance-related and behavioral disorders involve different mechanisms, risks, and forms of care. The architectural model only explains why “the person simply wants pleasure” is often inadequate.
 
-- If personality intact → recovery possible
-- If substrate irreversibly damaged → only migration
+## Love also changes the entire context
 
----
+Love cannot be reduced to one weight, threshold, or “reproduction program.” Another person can become part of one's internal context:
 
-## 2️⃣ Corruption: Threshold Shift
+- the horizon of the future changes through them;
+- their gaze participates in the image of the self;
+- their memory changes bodily and emotional state;
+- their absence continues to organize attention;
+- an internalized relationship becomes a way of meeting the world.
 
-### What happens
+Love can therefore persist without an immediate external signal. A person may not merely remember someone; for a time, they may return to the world that existed between them.
 
-Corruption is tuning thresholds to someone else's chord, to trigger exactly and take "not one's own."
+Love and addiction can consequently resemble each other phenomenologically. Both can:
 
-**Normal:**
+- reinstate an entire context rapidly;
+- change the priorities of many circuits;
+- be felt bodily;
+- continue in the object's absence;
+- become part of personality.
 
-```
-thr_lo = 5 (objective threshold)
-Input ≥ 5 → activation (earned)
-```
+The distinction cannot be reduced to “love points outward, addiction inward.” Love and dependency may coexist in the same relationship.
 
-**Failure:**
+## Dimensions instead of two classes
 
-```
-thr_lo = 2 (lowered for "own")
-Any input ≥ 2 → activation (unearned)
-```
+It is more useful to examine the properties of a mode than to name the feeling.
 
-### Technical Model (Decima-8)
+| Dimension | Integrating relationship | Capturing loop |
+| --- | --- | --- |
+| Source of state | Memory, present, and anticipation remain distinguishable | Internal reinstatement is treated as current fact |
+| Reality of the other | The other remains separate and free to change | The other becomes a device for maintaining a state |
+| Correction | New evidence can alter the model | Conflicting evidence is suppressed or reinterpreted |
+| Space of action | The world and behavioral repertoire expand | More actions serve one loop |
+| Decay | The state can weaken without destroying the bond | Any weakening immediately triggers renewed input |
+| Subpersonalities | Different circuits can disagree and negotiate | One mode captures the shared context |
+| Mutuality | Contact changes both sides | The internal scenario outranks real contact |
 
-```c
-// NORMAL: objective threshold
-const int thr_lo = 5;  // Objective standard
+This is not a test or diagnosis. The same relationship may move between columns, and a person may both love someone and use their internal image to maintain a dependent mode.
 
-if (input >= thr_lo) {
-    activate();
-    reward();  // Earned
-}
+## Where the Architect is
 
-// FAILURE: threshold shifted
-int thr_lo = 2;  // Lowered for "own"
+Engineered Decima has an explicit [Architect](../base/architect.md). The Architect defines lane semantics, weights, corridors, decay, domains, topology, and reset. A biological personality has no single baker sitting in front of an IDE.
 
-if (input >= thr_lo) {  // Always true for "own"
-    activate();
-    take_resources();  // Unearned
-}
-```
+Its “baking” is distributed through time:
 
-### Real-life Example: Public Procurement
+- evolution provides the substrate's basic possibilities;
+- early development shapes primary circuits;
+- family and culture supply a language of states;
+- experience strengthens some paths and weakens others;
+- trauma may preserve a survival mode;
+- habit repeatedly exercises one route;
+- deliberate practice can create new distinctions and responses.
 
-**Situation:**
+The question “who wrote this personality?” therefore has no single answer. Inherited, learned, defensive, and deliberately constructed architectures operate together. Their joint operation is experienced as a complex and sometimes contradictory self.
 
-```
-Normal:
-  Tender → best price/quality → win
-  thr_lo = 5 (objective)
+## What it means to feel this in oneself
 
-Corruption:
-  "Own" supplier → thr_lo lowered to 2
-  Even bad proposal passes
-  Budget "mastered", result — zero
-```
+A person may clearly notice a moment when a memory, name, message, song, or bodily sensation switches not one thought but the entire available world. The past, future, personal role, and possible actions all change together.
 
-**Diagnostics:**
+Such an experience does not prove a particular neurobiological mechanism. It is nevertheless a real phenomenological observation:
 
-```c
-// Relay log
-tact_42: input = 2.5 → activate() → take_budget(1M)
-// 🚨 Input 2.5 < thr_lo(5) → false activation
+> a system may undergo an internally reinstated state with almost the same force as a state caused by a current external event.
 
-// Check
-if (activation && !task_completed) {
-    flag_corruption();  // "Taken without completion"
-}
-```
+Decima provides a precise architectural vocabulary for describing it:
 
-### Example in Organization: Career Growth
+- shared context;
+- local integrators;
+- distributed memory;
+- permissions between circuits;
+- decay;
+- repeated input;
+- reset.
 
-```
-Normal:
-  Competencies ≥ thr_lo(5) → promotion
+The vocabulary sharpens the question. It does not replace neuroscience's answer.
 
-Corruption:
-  "Own person" → thr_lo = 2
-  Even without competencies → promotion
-  Result: system degrades
-```
+## Observe the source instead of denying the experience
 
-### Treatment
+Within this model, it is more useful to examine how a state was assembled than to declare it “unreal”:
 
-**1. Threshold Reform:**
+1. What happened outside directly?
+2. What did memory, anticipation, and imagination add?
+3. What did the body contribute?
+4. Which functional circuits gained control?
+5. Which evidence stopped being noticed?
+6. Can the state weaken without immediate internal replay?
+7. Is the other person still allowed to differ from the image restored by memory?
 
-```c
-// Return thr_lo to objective
-thr_lo = 5;  // Was: 2
+These are questions for observation, not self-treatment instructions. Their value is source discrimination: the experience remains real without automatically becoming an accurate account of the present.
 
-// Painful: "own" will stop passing
-// Needed: for system to work on task again
-```
+## Boundary of the medical model
 
-**2. External Verifier:**
+Substance use and addictive behavior disorders belong to medicine and clinical psychology. They cannot be reduced to weak will or one “incorrect circuit.” In severe dependence, abruptly stopping some substances, including alcohol, can be dangerous and requires professional assessment.
 
-```
-// Check not only input, but result
-if (activation && !external_verify()) {
-    rollback();  // Rollback
-    penalize();  // Penalty
-}
-```
+The architectural metaphor neither establishes a diagnosis nor selects treatment. Its narrower purpose is to show how one internally reproducible context can gain control over many processes without being caused by a new external event each time.
 
-**3. Migration to Clean System:**
+## Main conclusion
 
-If reform impossible → personality migrates
+We do not depend only on objects. Sometimes a system depends on the world it has learned to build around them.
 
-`.d8p` transferred to system with objective thresholds
+Love may also become an internal world, but its maturity is not measured by the strength of capture. It appears in the ability to preserve contact with the present, the other person's separateness, and the freedom of the rest of the personality.
 
-### Prognosis:
+Freedom in this model is not the absence of strong states. It is the capacity to:
 
-- If thresholds can be returned → recovery
-- If system irreversibly corrupted → migration
+- notice where a state came from;
+- distinguish reinstated past from current input;
+- admit new evidence into the shared context;
+- avoid surrendering the entire personality to one self-sustaining loop.
 
----
+## Scientific boundary and sources
 
-## 3️⃣ Non-chemical Addiction: Weight Failure
+- NIDA describes addiction as a medical disorder affecting the brain and behavior while emphasizing that its mechanisms remain incompletely understood: [Drugs, Brains, and Behavior](https://nida.nih.gov/publications/drugs-brains-behavior-science-addiction).
+- WHO defines addictive behavior disorders through impaired control, increasing priority, and continuation despite negative consequences: [Gaming disorder](https://www.who.int/news-room/questions-and-answers/item/addictive-behaviours-gaming-disorder).
+- Episodic memory experiments report reinstatement of distributed patterns and temporal context during retrieval: [Staresina et al., 2012](https://pubmed.ncbi.nlm.nih.gov/23238729/), [Yaffe et al., 2014](https://pubmed.ncbi.nlm.nih.gov/25512550/).
+- Memory retrieval is constructive rather than an exact replay of the original experience: [Xiao et al., 2017](https://pubmed.ncbi.nlm.nih.gov/28202612/).
 
-### What happens
+## Read next
 
-Personality damages itself: weights and thresholds tuned so they trigger on any noise, causing false learning.
-
-**Normal:**
-
-```
-Input → processing → task completed → reward → learning
-```
-
-**Failure:**
-
-```
-Noise → activation → reward (without task) → false learning
-```
-
-### Technical Model (Decima-8)
-
-```c
-// NORMAL: weights balanced
-weights = [
-    tile_1: +3,  // Moderate weight
-    tile_2: +2,
-    tile_3: +4,
-    ...
-];
-
-if (input >= thr_lo && task_completed) {
-    reward();  // Reward for task
-}
-
-// FAILURE: all weights maximum, circuit closed
-weights = [
-    tile_1: +7,  // MAX
-    tile_2: +7,  // MAX
-    tile_3: +7,  // MAX
-    ...
-];
-
-// Closed circuit
-if (noise >= 2) {  // thr_lo lowered
-    activate();
-    reward();  // Reward WITHOUT task
-    // Relay rewards itself
-}
-```
-
-### Example 1: Ludomania (Gambling Addiction)
-
-```
-Mechanism:
-  1. Game → arousal
-  2. Win/loss → reward (adrenaline)
-  3. Weights: game → arousal = +7 (MAX)
-  4. Any signal → "maybe lucky now"
-  5. Reward without real task
-
-Diagnostics:
-  thr_cur = 8 (high background)
-  noise = +2 (any stimulus)
-  thr_cur = 10 ≥ thr_lo(5) → craving to play
-
-  ❌ Weights corrupted: game → arousal = +7
-  ❌ Thresholds lowered: thr_lo = 2
-  ✅ Substrate intact (for now)
-```
-
-**False Learning:**
-
-```
-Episode 1:
-  Game → loss → pain
-  But: arousal was → reward
-  Personality conclusion: "game = good"
-
-Episode 100:
-  Weights fixed: game → arousal = +7
-  Personality doesn't learn from pain
-  Circuit closed on itself
-```
-
-### Example 2: Obsessive Passion (Not Love)
-
-```
-Situation:
-  Passion object → arousal
-  Even without reciprocity → reward (fantasies)
-
-Mechanism:
-  weights[passion → arousal] = +7
-  thr_lo = 2 (triggers on any hint)
-
-  Message → thr_cur = 11 → activate()
-  No message → fantasies → thr_cur = 9 → activate()
-
-  ❌ Reward without task (no reciprocity)
-  ❌ Circuit closed on itself
-```
-
-### Example 3: Information Addiction
-
-```
-Mechanism:
-  Feed scrolling → micro-rewards
-  Any notification → dopamine
-  weights[notification → check] = +7
-
-  Result:
-  - Real task not solved
-  - Reward without result
-  - Substrate (attention) depletes
-```
-
-### Treatment
-
-**1. Weight Reflashing:**
-
-```
-// Forced weight reset
-weights = [
-    tile_1: 0,  // Reset
-    tile_2: 0,
-    ...
-];
-
-// Retraining on real tasks
-for (task in real_tasks) {
-    if (task_completed) {
-        weights[task → reward] += 1;  // Gradual learning
-    }
-}
-```
-
-**2. Breaking Closed Circuit:**
-
-```
-// External verifier
-if (activation && !external_verify()) {
-    block_reward();  // Reward doesn't pass
-    log_false_positive();
-}
-```
-
-**3. Trigger Isolation:**
-
-```
-// Temporarily block corrupted path
-if (tile == addiction_tile) {
-    mask = 0;  // Doesn't transmit relay
-}
-```
-
-### Prognosis:
-
-- If personality ready for reflashing → recovery
-- If circuit too closed → complete .d8p reassembly
-
----
-
-## 4️⃣ Love: Built-in Program (Feature, Not Bug)
-
-### What happens:
-
-Love is not a malfunction, but a built-in reproduction program with maximum priority.
-
-**Not addiction:**
-
-```
-Addiction: closure on self → line death
-Love: opening to another → line continuation
-```
-
-### Technical Model (Decima-8)
-
-```c
-// BUILT-IN PROGRAM (not bug)
-const PRIORITY = MAX;  // Higher than self-preservation
-
-void love_program() {
-    if (partner_detected) {
-        activate();
-
-        // Sacrifice self for continuation
-        if (threat_to_partner) {
-            sacrifice_self();  // Instinct
-        }
-
-        // Investment in future
-        invest_resources(partner);
-        invest_resources(offspring);
-    }
-}
-```
-
-### Key Differences from Addiction
-
-| Parameter | Addiction | Love |
-| --------- | --------- | ---- |
-| Direction | Closure on self | Opening to another |
-| Resource | Depletion | Investment in future |
-| Relay | False (without task) | Authentic (continuation) |
-| Result | Line end | Line continuation |
-| Treatment | Treat | Execute |
-
-### Example: Parental Love
-
-```
-Mechanism:
-  Child detected → activate()
-  PRIORITY = MAX (above own survival)
-
-  if (threat_to_child) {
-      sacrifice_self();  // Automatically
-  }
-
-  invest_resources(child);  // Without expecting return
-
-Diagnostics:
-  ✅ Weights adequate: child → care = +7
-  ✅ Thresholds objective: thr_lo = 5
-  ✅ Circuit open: investment in future
-  ✅ Substrate intact (though loaded)
-
-Conclusion:
-  This is not a bug. This is a feature.
-  Don't treat. Execute.
-```
-
-### Example: Partner Love
-
-```
-Mechanism:
-  Partner detected → activate()
-  Mutual resource investment
-
-  if (partner_needs_help) {
-      help();  // Without guarantee of return
-  }
-
-  // Not closure on self
-  // Opening to another → growth of both
-
-Diagnostics:
-  ✅ Weights: partner → care = +5 (moderate)
-  ✅ Thresholds: thr_lo = 5 (objective)
-  ✅ Relay: authentic (mutual growth)
-
-Conclusion:
-  This is not addiction.
-  This is continuation program.
-```
-
-### Why Love is Not Addiction
-
-**Addiction:**
-
-```
-I → arousal → reward (without task)
-Closure on self
-Depletion
-Line end
-```
-
-**Love:**
-
-```
-I → another → investment → continuation
-Opening to another
-Growth
-Line continuation
-```
-
-### "Treatment" of Love
-
-Don't treat. Direct. Execute.
-
-```c
-// If love is feature, not bug:
-if (love_program.active) {
-    // Don't block
-    // Don't reflash
-    // Don't treat
-
-    // Direct
-    if (love_program.direction == self_destructive) {
-        redirect_to_constructive();
-    }
-
-    // Execute
-    execute_love_program();
-
-    // Continue line
-    continue_lineage();
-}
-```
-
----
-
-## 🧭 Final Diagnostics
-
-### How to Determine Type
-
-#### Question 1: Is substrate damaged?
-
-- ✅ Yes → Type 1: Chemical Addiction
-- ❌ No → Question 2
-
-#### Question 2: Are thresholds shifted for "own"?
-
-- ✅ Yes → Type 2: Corruption
-- ❌ No → Question 3
-
-#### Question 3: Are weights closed on self?
-
-- ✅ Yes → Type 3: Non-chemical Addiction
-- ❌ No → Question 4
-
-#### Question 4: Directed to another, with investment in future?
-
-- ✅ Yes → Type 4: Love (feature)
-- ❌ No → Review diagnostics
-
----
-
-## 💡 Main Insight
-
-> Three addictions — this is line death.
-
-> Love — this is line continuation.
-
-| Type | Line |
-| ---- | ---- |
-| Chemistry | ❌ Substrate will die |
-| Corruption | ❌ System will rot |
-| Addiction | ❌ Personality will close |
-| Love | ✅ Line will continue |
-
-**Diagnosis determines treatment:**
-
-- Bugs (1-3) → treat
-- Feature (4) → execute
-
----
-
-## Read Next
-
-- [Architectural Manifesto](../nomos/about.md)
-- [Decima-8 Ecosystem](../nomos/control.md)
-- [I / NOT I: Boundary of Subjectivity](../base/detector-antagonist.md)
+- [Eight strings of a shared environment](../base/vsb-life.md)
+- [The Architect defines the personality](../base/architect.md)
+- [The substrate executes but does not set the goal](../base/substrate.md)
+- [Reaction corridor](../base/detector-antagonist.md)

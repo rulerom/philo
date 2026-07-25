@@ -1,0 +1,1073 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<meta content="Четыре уровня: персональные данные, стандарт, хранилище, ASIC." name="description"/>
+<link href="https://philo.rulerom.com/nomos/control/" rel="canonical"/>
+<link href="../about/" rel="prev"/>
+<link href="../suveren/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.7.6" name="generator"/>
+<title>Экосистема Decima-8: Архитектурное Управление - Rule-ROM Philo — философия исполняемой личности</title>
+<link href="../../assets/stylesheets/main.484c7ddc.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/mermaid.css" rel="stylesheet"/>
+<link href="../../assets/rulerom.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=107711657', 'ym');
+
+    ym(107711657, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<noscript><div><img alt="" src="https://mc.yandex.ru/watch/107711657" style="position:absolute; left:-9999px;"/></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+</head>
+<body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="slate" dir="ltr">
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#decima-8">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Rule-ROM Philo — философия исполняемой личности" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Rule-ROM Philo — философия исполняемой личности">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Rule-ROM Philo — философия исполняемой личности
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Экосистема Decima-8: Архитектурное Управление
+            
+          </span>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+</button>
+</nav>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        
+  
+  
+    
+  
+  Главная
+
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../base/architect/">
+          
+  
+  
+  Фундамент
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../arch/determenism/">
+          
+  
+  
+  Архитектура
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../world/whaler/">
+          
+  
+  
+  Практика
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../world/earth/">
+          
+  
+  
+  Архив метафор
+
+        </a>
+</li>
+<li class="md-tabs__item md-tabs__item--active">
+<a class="md-tabs__link" href="../about/">
+          
+  
+  
+  Номос
+
+        </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../ecosystem/">
+        
+  
+  
+    
+  
+  Экосистема
+
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Rule-ROM Philo — философия исполняемой личности" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Rule-ROM Philo — философия исполняемой личности">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+</a>
+    Rule-ROM Philo — философия исполняемой личности
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+<span class="md-ellipsis">
+    
+  
+    Главная
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Фундамент
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Фундамент
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../base/architect/">
+<span class="md-ellipsis">
+    
+  
+    Архитектор и пекарь
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../base/personality/">
+<span class="md-ellipsis">
+    
+  
+    Личность
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../base/vsb-life/">
+<span class="md-ellipsis">
+    
+  
+    Восемь струн VSB
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../base/detector-antagonist/">
+<span class="md-ellipsis">
+    
+  
+    Коридор реакции
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../base/substrate/">
+<span class="md-ellipsis">
+    
+  
+    Субстрат
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Архитектура
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Архитектура
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arch/determenism/">
+<span class="md-ellipsis">
+    
+  
+    Детерминизм
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arch/relay/">
+<span class="md-ellipsis">
+    
+  
+    Граф допуска
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../arch/father-bus/">
+<span class="md-ellipsis">
+    
+  
+    VSB и BUS16
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Практика
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Практика
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../world/whaler/">
+<span class="md-ellipsis">
+    
+  
+    Whaler
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+<span class="md-ellipsis">
+    
+  
+    Архив метафор
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Архив метафор
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../world/earth/">
+<span class="md-ellipsis">
+    
+  
+    Земля как Training Phase
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../world/piano14/">
+<span class="md-ellipsis">
+    
+  
+    Воннегут и Руди Герц
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../world/addict/">
+<span class="md-ellipsis">
+    
+  
+    Зависимость и любовь
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+<span class="md-ellipsis">
+    
+  
+    Номос
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+            
+  
+    Номос
+  
+
+          </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../about/">
+<span class="md-ellipsis">
+    
+  
+    Архитектурный манифест
+  
+
+    
+  </span>
+</a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+<span class="md-ellipsis">
+    
+  
+    Архитектурное управление
+  
+
+    
+  </span>
+<span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+<span class="md-ellipsis">
+    
+  
+    Архитектурное управление
+  
+
+    
+  </span>
+</a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        🔹 Четыре слоя: что где и зачем
+      
+    </span>
+</a>
+<nav aria-label="🔹 Четыре слоя: что где и зачем" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-d8p-intent-gardenorg">
+<span class="md-ellipsis">
+      
+        Слой 1: Личности (.d8p) → 🌿 intent-garden.org
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-d8p-spec-ruleromcom">
+<span class="md-ellipsis">
+      
+        Слой 2: Стандарт (.d8p spec) → 📜 rulerom.com
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-store-ruleromstore">
+<span class="md-ellipsis">
+      
+        Слой 3: Store (платформа) → 🛒 rulerom.store
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-asic-decima8org">
+<span class="md-ellipsis">
+      
+        Слой 4: ASIC (ядро) → 🐉 decima8.org
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        🔹 Три уровня контроля: как Управление Архитектуры держит качество
+      
+    </span>
+</a>
+<nav aria-label="🔹 Три уровня контроля: как Управление Архитектуры держит качество" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+<span class="md-ellipsis">
+      
+        Уровень 1: Ядро
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      
+        Уровень 2: Платформа
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+<span class="md-ellipsis">
+      
+        Уровень 3: Сообщество
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        🔹 Поток ценности: шаг за шагом
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        🔹 Главный принцип
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../suveren/">
+<span class="md-ellipsis">
+    
+  
+    Суверенитет для авторов
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../ecosystem/">
+<span class="md-ellipsis">
+    
+  
+    Экосистема
+  
+
+    
+  </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+<span class="md-ellipsis">
+      
+        🔹 Четыре слоя: что где и зачем
+      
+    </span>
+</a>
+<nav aria-label="🔹 Четыре слоя: что где и зачем" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1-d8p-intent-gardenorg">
+<span class="md-ellipsis">
+      
+        Слой 1: Личности (.d8p) → 🌿 intent-garden.org
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2-d8p-spec-ruleromcom">
+<span class="md-ellipsis">
+      
+        Слой 2: Стандарт (.d8p spec) → 📜 rulerom.com
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3-store-ruleromstore">
+<span class="md-ellipsis">
+      
+        Слой 3: Store (платформа) → 🛒 rulerom.store
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4-asic-decima8org">
+<span class="md-ellipsis">
+      
+        Слой 4: ASIC (ядро) → 🐉 decima8.org
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_2">
+<span class="md-ellipsis">
+      
+        🔹 Три уровня контроля: как Управление Архитектуры держит качество
+      
+    </span>
+</a>
+<nav aria-label="🔹 Три уровня контроля: как Управление Архитектуры держит качество" class="md-nav">
+<ul class="md-nav__list">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+<span class="md-ellipsis">
+      
+        Уровень 1: Ядро
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2">
+<span class="md-ellipsis">
+      
+        Уровень 2: Платформа
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+<span class="md-ellipsis">
+      
+        Уровень 3: Сообщество
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_3">
+<span class="md-ellipsis">
+      
+        🔹 Поток ценности: шаг за шагом
+      
+    </span>
+</a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_4">
+<span class="md-ellipsis">
+      
+        🔹 Главный принцип
+      
+    </span>
+</a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="decima-8">Экосистема Decima-8: Архитектурное Управление</h1>
+<blockquote>
+<p>«Не владей всем. Владей сутью. Остальное — отдай тем, кто умножит.»</p>
+</blockquote>
+<pre><code class="language-txt">                    ┌─────────────────────┐
+                    │  decima8.org        │
+                    │  • Патенты          │
+                    │  • ASIC / tapeout   │
+                    │  • Вход для B2B     │
+                    └─────────┬───────────┘
+                              │
+┌─────────────────────────────┼────────────────────────────────────┐
+│                             │                                    │
+│  ┌─────────────────┐  ┌─────▼──────────┐  ┌───────────────────┐  │
+│  │ rulerom.com     │  │ rulerom.store  │  │ intent-garden.org │  │
+│  │ • Philosophy    │  │ • Store        │  │ • Платформа       │  │
+│  │ • Codex         │  │ • .d8p каталог │  │ • Авторы          │  │
+│  │ • SEO (RU/EN/ZH)│  │ • Верификация  │  │ • Эквайринг       │  │
+│  └────────┬────────┘  └─────┬──────────┘  │ • Роялти          │  │
+│           │                 │             └────────┬──────────┘  │
+│           │                 │                      │             │
+│           ▼                 ▼                      ▼             │
+│  ┌──────────────────────────────────────────────────────────┐    │
+│  │                  Управление архитектуры                  │    │
+│  │         • Контроль ядра  • Лицензии  • Эволюция          │    │
+│  └──────────────────────────────────────────────────────────┘    │
+└──────────────────────────────────────────────────────────────────┘
+</code></pre>
+<h2 id="_1">🔹 Четыре слоя: что где и зачем</h2>
+<h3 id="1-d8p-intent-gardenorg">Слой 1: Личности (.d8p) → <a href="https://intent-garden.org/main_ru/">🌿 intent-garden.org</a></h3>
+<table>
+<thead>
+<tr>
+<th>Вопрос</th>
+<th>Ответ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Что это?</td>
+<td>Конкретные личности: «трейдер-китобой», «диагност-ЭКГ», «пилот-дрон» — каждая как файл <code>.d8p</code></td>
+</tr>
+<tr>
+<td>Что отдаётся?</td>
+<td>Доступ к запуску этих личностей: любой пользователь может купить, скачать, запустить на своём железе</td>
+</tr>
+<tr>
+<td>Что сохраняется?</td>
+<td>• Авторство (через PKI-подпись: кто создал)<br/> • Роялти (автор получает % за каждое использование)<br/> • Право отозвать лицензию (если личность скомпрометирована)</td>
+</tr>
+<tr>
+<td>Зачем так?</td>
+<td>Чтобы авторы могли творить и получать доход, а пользователи — доверять источнику. Масштабирование через сообщество, а не через централизованную разработку.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Аналогия:</strong> YouTube для личностей. Автор загружает видео (<code>.d8p</code>), платформа проверяет (верификация), зритель смотрит (запускает), автор получает монетизацию.</p>
+<h3 id="2-d8p-spec-ruleromcom">Слой 2: Стандарт (.d8p spec) → <a href="https://decima.rulerom.com/ru/">📜 rulerom.com</a></h3>
+<table>
+<thead>
+<tr>
+<th>Вопрос</th>
+<th>Ответ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Что это?</td>
+<td>Спецификация формата .d8p: как устроен файл, какие поля, как валидировать, как эволюционирует версия</td>
+</tr>
+<tr>
+<td>Что отдаётся?</td>
+<td>Сам документ спецификации — открыт, любой может прочитать, написать свой загрузчик, эмулятор, инструмент</td>
+</tr>
+<tr>
+<td>Что сохраняется?</td>
+<td>• Контроль версий (только Управление Архитектуры решает, когда выпускать v1.1, v2.0)<br/> • Эволюция (обратная совместимость, миграция старых .d8p)</td>
+</tr>
+<tr>
+<td>Зачем так?</td>
+<td>Чтобы стандарт стал общим (как HTTP, USB, RISC-V), но эволюция не превратилась в хаос. Открытость для совместимости, контроль для целостности.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Аналогия:</strong> Спецификация USB. Любой может сделать флешку, но только USB-IF решает, что будет в версии 4.0.</p>
+<h3 id="3-store-ruleromstore">Слой 3: Store (платформа) → <a href="https://rulerom.store/ru/">🛒 rulerom.store</a></h3>
+<table>
+<thead>
+<tr>
+<th>Вопрос</th>
+<th>Ответ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Что это?</td>
+<td>Маркетплейс личностей: каталог, поиск, верификация, покупка, загрузка</td>
+</tr>
+<tr>
+<td>Что отдаётся?</td>
+<td>Доступ для авторов: после верификации любой может опубликовать свою личность в каталоге</td>
+</tr>
+<tr>
+<td>Что сохраняется?</td>
+<td>• Платформа (инфраструктура: хостинг, поиск, платежи)<br/> • Аудит (проверка на коррупцию весов, соответствие спеке)<br/> • Комиссии (модель монетизации платформы)</td>
+</tr>
+<tr>
+<td>Зачем так?</td>
+<td>Чтобы пользователи доверяли: «проверено, работает». Чтобы авторы имели канал дистрибуции. Чтобы Управление Архитектуры могло фильтровать качество.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Аналогия:</strong> App Store. Любой разработчик может опубликовать приложение, но только после ревью. Пользователь видит рейтинг, отзывы, гарантию.</p>
+<h3 id="4-asic-decima8org">Слой 4: ASIC (ядро) → <a href="https://decima8.org/main_ru/">🐉 decima8.org</a></h3>
+<table>
+<thead>
+<tr>
+<th>Вопрос</th>
+<th>Ответ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Что это?</td>
+<td>Физическая реализация архитектуры: чип, спецификации для производителей, патенты</td>
+</tr>
+<tr>
+<td>Что отдаётся?</td>
+<td>Лицензия на использование архитектуры: производитель может делать чипы, если соблюдает спецификацию и платит роялти</td>
+</tr>
+<tr>
+<td>Что сохраняется?</td>
+<td>• Патенты (юридическая защита)<br/> • Спецификации (техническая защита: только лицензиаты получают полные доки)<br/> • Роялти (доход за каждый произведённый чип)</td>
+</tr>
+<tr>
+<td>Зачем так?</td>
+<td>Чтобы детерминизм не был скомпрометирован дешёвыми клонами. Чтобы инвестиции в tapeout окупались. Чтобы архитектура масштабировалась в железо без потери качества.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Аналогия:</strong> ARM. Архитектура у них, чипы у Apple/Qualcomm/Samsung, роялти течёт к источнику.</p>
+<hr/>
+<h2 id="_2">🔹 Три уровня контроля: как Управление Архитектуры держит качество</h2>
+<h3 id="1">Уровень 1: Ядро</h3>
+<table>
+<thead>
+<tr>
+<th>Что контролируется</th>
+<th>Архитектура, патенты, эволюция спецификации</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Инструмент</td>
+<td>• Патенты (юридический барьер)<br/> • Лицензирование (договор с производителями)<br/> • Закрытое ООО (юридический владелец ИС)</td>
+</tr>
+<tr>
+<td>Цель</td>
+<td>Защита от форков, которые «сломают детерминизм». Если кто-то сделает «Decima-8 Lite» с роутерами вместо эстафеты — это уже не Decima-8. Патенты + лицензии не дают этому случиться.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример:</strong> Производитель хочет сделать чип, но «упростить» эстафету до 2 соседей вместо 8. Управление Архитектуры говорит: «Нет, это нарушает спецификацию. Либо делайте по спеке, либо не используйте бренд».</p>
+<h3 id="2">Уровень 2: Платформа</h3>
+<table>
+<thead>
+<tr>
+<th>Что контролируется</th>
+<th>Кто попадает в Store, качество <code>.d8p</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Инструмент</td>
+<td>• PKI-подпись (автор должен подписать личность своим ключом)<br/> • Аудит на коррупцию весов (детекция <code>weight=-7</code> или <code>7</code> по всем ячейкам — зависимость)<br/> • Проверка соответствия спеке (валидатор формата)</td>
+</tr>
+<tr>
+<td>Цель</td>
+<td>Доверие: пользователь видит бейдж «Проверено» и знает: эта личность не «сломается» в продакшене. Автор знает: если его личность пройдёт аудит — она будет в каталоге с рейтингом.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример:</strong> Автор загрузил <code>.d8p</code> с «супер-трейдером». Аудит обнаружил, что 90% весов застряли в +7 (агрессия). Личность не проходит верификацию. Автор получает отчёт: «Исправьте коррупцию, попробуйте снова».</p>
+<h3 id="3">Уровень 3: Сообщество</h3>
+<table>
+<thead>
+<tr>
+<th>Что контролируется</th>
+<th>Авторы личностей, распределение роялти</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Инструмент</td>
+<td>• Лицензионный договор (правила использования, роялти, отзыв)<br/> • Прозрачный реестр (кто сколько заработал, кто сколько использовал)<br/> • Механизм обратной связи (рейтинги, отзывы, баг-репорты)</td>
+</tr>
+<tr>
+<td>Цель</td>
+<td>Стимул: автор видит, что его личность покупают → получает роялти → создаёт новую. Пользователь видит рейтинг → выбирает лучшее. Управление Архитектуры видит метрики → понимает, какие направления развивать.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Пример:</strong> Автор личности «Диагност-ЭКГ» получил 1000 запусков → 500₽ роялти → решил сделать «Диагност-УЗИ». Пользователь видит рейтинг 4.9/5 → покупает. Управление Архитектуры видит рост категории «медицина» → инвестирует в соответствующие пилоты.</p>
+<hr/>
+<h2 id="_3">🔹 Поток ценности: шаг за шагом</h2>
+<pre><code>1. Автор создаёт личность
+   ↓
+   • Пишет код / настраивает веса
+   • Подписывает своим PKI-ключом
+   ↓
+
+2. intent-garden.org: регистрация + оплата
+   ↓
+   • Автор получает аккаунт, эквайринг настроен
+   • Платформа фиксирует авторство
+   ↓
+
+3. rulerom.store: верификация → публикация
+   ↓
+   • Аудит проверяет: подпись, веса, спека
+   • Если ОК → личность в каталоге с рейтингом
+   ↓
+
+4. Пользователь покупает → запускает
+   ↓
+   • Покупает лицензию на использование
+   • Запускает на эмуляторе (x86) или ASIC
+   ↓
+
+5. Роялти распределяются
+   ↓
+   • % → Автору (через intent-garden.org)
+   • % → Управлению Архитектуры (поддержка платформы)
+   ↓
+
+6. Производитель ASIC лицензирует ядро
+   ↓
+   • Получает спецификацию с decima8.org
+   • Платит роялти за каждый чип
+   ↓
+
+7. Цикл замыкается
+   ↓
+   • Больше чипов → больше запусков → больше роялти
+   • Больше роялти → больше инвестиций в эволюцию
+   • Больше эволюции → больше авторов и пользователей
+</code></pre>
+<hr/>
+<h2 id="_4">🔹 Главный принцип</h2>
+<blockquote>
+<p>Открытость без контроля = хаос.</p>
+<p>Контроль без открытости = диктатура.</p>
+<p>Слои = устойчивость.</p>
+</blockquote>
+<p>Управление Архитектуры не выбирает между «открыто» и «закрыто».</p>
+<p>Управление Архитектуры проектирует систему, где:</p>
+<ul>
+<li><strong>Личности</strong> — открыты для творчества (сообщество растёт)</li>
+<li><strong>Стандарт</strong> — открыт для совместимости (экосистема не фрагментируется)</li>
+<li><strong>Store</strong> — контролируем для доверия (качество гарантировано)</li>
+<li><strong>ASIC</strong> — контролируем для качества (детерминизм не ломается)</li>
+</ul>
+<p><strong>Это не компромисс. Это — архитектура.</strong></p>
+<hr/>
+<p><a href="https://intent-garden.org/main_ru/">🐝 ПРИСОЕДЕНИТЬСЯ К СВАРМУ</a></p>
+<hr/>
+</article>
+</div>
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+</div>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+<script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+</body>
+</html>
